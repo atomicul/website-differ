@@ -12,6 +12,9 @@ from bs4 import BeautifulSoup, Tag
 LANDMARK_TAGS = frozenset(
     {"header", "nav", "main", "aside", "footer", "section", "article"}
 )
+IGNORED_TAGS = frozenset(
+    {"script", "style", "link", "meta", "noscript", "template"}
+)
 
 LANDMARK_WEIGHT = 0.40
 SKELETON_WEIGHT = 0.60
@@ -75,11 +78,14 @@ def extract_skeleton(soup: BeautifulSoup) -> list[NodeProfile]:
         return []
     profiles: list[NodeProfile] = []
     for child in body.children:
-        if not isinstance(child, Tag):
+        if not isinstance(child, Tag) or child.name in IGNORED_TAGS:
             continue
         profiles.append(_make_profile(child))
         for grandchild in child.children:
-            if not isinstance(grandchild, Tag):
+            if (
+                not isinstance(grandchild, Tag)
+                or grandchild.name in IGNORED_TAGS
+            ):
                 continue
             profiles.append(_make_profile(grandchild))
     return profiles
