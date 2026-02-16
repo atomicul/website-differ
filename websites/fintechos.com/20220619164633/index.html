@@ -1,0 +1,1655 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head><meta charset="UTF-8"><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>class RocketLazyLoadScripts{constructor(){this.triggerEvents=["keydown","mousedown","mousemove","touchmove","touchstart","touchend","wheel"],this.userEventHandler=this._triggerListener.bind(this),this.touchStartHandler=this._onTouchStart.bind(this),this.touchMoveHandler=this._onTouchMove.bind(this),this.touchEndHandler=this._onTouchEnd.bind(this),this.clickHandler=this._onClick.bind(this),this.interceptedClicks=[],window.addEventListener("pageshow",(e=>{this.persisted=e.persisted})),window.addEventListener("DOMContentLoaded",(()=>{this._preconnect3rdParties()})),this.delayedScripts={normal:[],async:[],defer:[]},this.allJQueries=[]}_addUserInteractionListener(e){document.hidden?e._triggerListener():(this.triggerEvents.forEach((t=>window.addEventListener(t,e.userEventHandler,{passive:!0}))),window.addEventListener("touchstart",e.touchStartHandler,{passive:!0}),window.addEventListener("mousedown",e.touchStartHandler),document.addEventListener("visibilitychange",e.userEventHandler))}_removeUserInteractionListener(){this.triggerEvents.forEach((e=>window.removeEventListener(e,this.userEventHandler,{passive:!0}))),document.removeEventListener("visibilitychange",this.userEventHandler)}_onTouchStart(e){"HTML"!==e.target.tagName&&(window.addEventListener("touchend",this.touchEndHandler),window.addEventListener("mouseup",this.touchEndHandler),window.addEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.addEventListener("mousemove",this.touchMoveHandler),e.target.addEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"onclick","rocket-onclick"))}_onTouchMove(e){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler),e.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"rocket-onclick","onclick")}_onTouchEnd(e){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler)}_onClick(e){e.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"rocket-onclick","onclick"),this.interceptedClicks.push(e),e.preventDefault(),e.stopPropagation(),e.stopImmediatePropagation()}_replayClicks(){window.removeEventListener("touchstart",this.touchStartHandler,{passive:!0}),window.removeEventListener("mousedown",this.touchStartHandler),this.interceptedClicks.forEach((e=>{e.target.dispatchEvent(new MouseEvent("click",{view:e.view,bubbles:!0,cancelable:!0}))}))}_renameDOMAttribute(e,t,n){e.hasAttribute&&e.hasAttribute(t)&&(event.target.setAttribute(n,event.target.getAttribute(t)),event.target.removeAttribute(t))}_triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}_preconnect3rdParties(){let e=[];document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((t=>{if(t.hasAttribute("src")){const n=new URL(t.src).origin;n!==location.origin&&e.push({src:n,crossOrigin:t.crossOrigin||"module"===t.getAttribute("data-rocket-type")})}})),e=[...new Map(e.map((e=>[JSON.stringify(e),e]))).values()],this._batchInjectResourceHints(e,"preconnect")}async _loadEverythingNow(){this.lastBreath=Date.now(),this._delayEventListeners(),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async);try{await this._triggerDOMContentLoaded(),await this._triggerWindowLoad()}catch(e){}window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this._replayClicks()}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((e=>{e.hasAttribute("src")?e.hasAttribute("async")&&!1!==e.async?this.delayedScripts.async.push(e):e.hasAttribute("defer")&&!1!==e.defer||"module"===e.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(e):this.delayedScripts.normal.push(e):this.delayedScripts.normal.push(e)}))}async _transformScript(e){return await this._littleBreath(),new Promise((t=>{const n=document.createElement("script");[...e.attributes].forEach((e=>{let t=e.nodeName;"type"!==t&&("data-rocket-type"===t&&(t="type"),n.setAttribute(t,e.nodeValue))})),e.hasAttribute("src")?(n.addEventListener("load",t),n.addEventListener("error",t)):(n.text=e.text,t());try{e.parentNode.replaceChild(n,e)}catch(e){t()}}))}async _loadScriptsFromList(e){const t=e.shift();return t?(await this._transformScript(t),this._loadScriptsFromList(e)):Promise.resolve()}_preloadAllScripts(){this._batchInjectResourceHints([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}_batchInjectResourceHints(e,t){var n=document.createDocumentFragment();e.forEach((e=>{if(e.src){const i=document.createElement("link");i.href=e.src,i.rel=t,"preconnect"!==t&&(i.as="script"),e.getAttribute&&"module"===e.getAttribute("data-rocket-type")&&(i.crossOrigin=!0),e.crossOrigin&&(i.crossOrigin=e.crossOrigin),n.appendChild(i)}})),document.head.appendChild(n)}_delayEventListeners(){let e={};function t(t,n){!function(t){function n(n){return e[t].eventsToRewrite.indexOf(n)>=0?"rocket-"+n:n}e[t]||(e[t]={originalFunctions:{add:t.addEventListener,remove:t.removeEventListener},eventsToRewrite:[]},t.addEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.add.apply(t,arguments)},t.removeEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.remove.apply(t,arguments)})}(t),e[t].eventsToRewrite.push(n)}function n(e,t){let n=e[t];Object.defineProperty(e,t,{get:()=>n||function(){},set(i){e["rocket"+t]=n=i}})}t(document,"DOMContentLoaded"),t(window,"DOMContentLoaded"),t(window,"load"),t(window,"pageshow"),t(document,"readystatechange"),n(document,"onreadystatechange"),n(window,"onload"),n(window,"onpageshow")}_delayJQueryReady(e){let t=window.jQuery;Object.defineProperty(window,"jQuery",{get:()=>t,set(n){if(n&&n.fn&&!e.allJQueries.includes(n)){n.fn.ready=n.fn.init.prototype.ready=function(t){e.domReadyFired?t.bind(document)(n):document.addEventListener("rocket-DOMContentLoaded",(()=>t.bind(document)(n)))};const t=n.fn.on;n.fn.on=n.fn.init.prototype.on=function(){if(this[0]===window){function e(e){return e.split(" ").map((e=>"load"===e||0===e.indexOf("load.")?"rocket-jquery-load":e)).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=e(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach((t=>{delete Object.assign(arguments[0],{[e(t)]:arguments[0][t]})[t]}))}return t.apply(this,arguments),this},e.allJQueries.push(n)}t=n}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._littleBreath(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._littleBreath(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._littleBreath(),window.dispatchEvent(new Event("rocket-load")),await this._littleBreath(),window.rocketonload&&window.rocketonload(),await this._littleBreath(),this.allJQueries.forEach((e=>e(window).trigger("rocket-jquery-load"))),await this._littleBreath();const e=new Event("rocket-pageshow");e.persisted=this.persisted,window.dispatchEvent(e),await this._littleBreath(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted})}_handleDocumentWrite(){const e=new Map;document.write=document.writeln=function(t){const n=document.currentScript,i=document.createRange(),r=n.parentElement;let o=e.get(n);void 0===o&&(o=n.nextSibling,e.set(n,o));const s=document.createDocumentFragment();i.setStart(s,0),s.appendChild(i.createContextualFragment(t)),r.insertBefore(s,o)}}async _littleBreath(){Date.now()-this.lastBreath>45&&(await this._requestAnimFrame(),this.lastBreath=Date.now())}async _requestAnimFrame(){return document.hidden?new Promise((e=>setTimeout(e))):new Promise((e=>requestAnimationFrame(e)))}static run(){const e=new RocketLazyLoadScripts;e._addUserInteractionListener(e)}}RocketLazyLoadScripts.run();</script>
+
+  </meta><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"></meta><title >FintechOS | The digital banking and insurance platform</title><style id="rocket-critical-css">:root{--bs-blue:#0d6efd;--bs-indigo:#6610f2;--bs-purple:#6f42c1;--bs-pink:#d63384;--bs-red:#dc3545;--bs-orange:#fd7e14;--bs-yellow:#ffc107;--bs-green:#198754;--bs-teal:#20c997;--bs-cyan:#0dcaf0;--bs-white:#fff;--bs-gray:#6c757d;--bs-gray-dark:#343a40;--bs-gray-100:#f8f9fa;--bs-gray-200:#e9ecef;--bs-gray-300:#dee2e6;--bs-gray-400:#ced4da;--bs-gray-500:#adb5bd;--bs-gray-600:#6c757d;--bs-gray-700:#495057;--bs-gray-800:#343a40;--bs-gray-900:#212529;--bs-primary:#0d6efd;--bs-secondary:#6c757d;--bs-success:#198754;--bs-info:#0dcaf0;--bs-warning:#ffc107;--bs-danger:#dc3545;--bs-light:#f8f9fa;--bs-dark:#212529;--bs-primary-rgb:13,110,253;--bs-secondary-rgb:108,117,125;--bs-success-rgb:25,135,84;--bs-info-rgb:13,202,240;--bs-warning-rgb:255,193,7;--bs-danger-rgb:220,53,69;--bs-light-rgb:248,249,250;--bs-dark-rgb:33,37,41;--bs-white-rgb:255,255,255;--bs-black-rgb:0,0,0;--bs-body-color-rgb:33,37,41;--bs-body-bg-rgb:255,255,255;--bs-font-sans-serif:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";--bs-font-monospace:SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;--bs-gradient:linear-gradient(180deg,hsla(0,0%,100%,.15),hsla(0,0%,100%,0));--bs-body-font-family:var(--bs-font-sans-serif);--bs-body-font-size:1rem;--bs-body-font-weight:400;--bs-body-line-height:1.5;--bs-body-color:#212529;--bs-body-bg:#fff}.container,.header__wrapper{margin-left:auto;margin-right:auto;padding-left:var(--bs-gutter-x,16px);padding-right:var(--bs-gutter-x,16px);width:100%}@media (min-width:1200px){.container,.header__wrapper{max-width:1140px}}.row{--bs-gutter-x:32px;--bs-gutter-y:0;display:flex;flex-wrap:wrap;margin-left:calc(var(--bs-gutter-x)*-.5);margin-right:calc(var(--bs-gutter-x)*-.5);margin-top:calc(var(--bs-gutter-y)*-1)}.row>*{box-sizing:border-box;flex-shrink:0;margin-top:var(--bs-gutter-y);max-width:100%;padding-left:calc(var(--bs-gutter-x)*.5);padding-right:calc(var(--bs-gutter-x)*.5);width:100%}.col-8{flex:0 0 auto;width:66.66666667%}.col-12{flex:0 0 auto;width:100%}.offset-2{margin-left:16.66666667%}@media (min-width:768px){.col-md-6{flex:0 0 auto;width:50%}.col-md-8{flex:0 0 auto;width:66.66666667%}}@media (min-width:992px){.col-lg-3{flex:0 0 auto;width:25%}.col-lg-6{flex:0 0 auto;width:50%}.col-lg-7{flex:0 0 auto;width:58.33333333%}.offset-lg-1{margin-left:8.33333333%}}.d-block{display:block!important}.d-flex{display:flex!important}.d-none{display:none!important}.flex-column{flex-direction:column!important}.justify-content-center{justify-content:center!important}.align-items-center{align-items:center!important}.mt-3{margin-top:1rem!important}.mb-5{margin-bottom:3rem!important}@media (min-width:768px){.d-md-none{display:none!important}}@media (min-width:992px){.d-lg-none{display:none!important}.mt-lg-5{margin-top:3rem!important}.p-lg-0{padding:0!important}}:root{--swiper-theme-color:#007aff}:root{--swiper-navigation-size:44px}.btn,button{-webkit-appearance:none;-moz-appearance:none;appearance:none;background:none;border:1px solid transparent;border-radius:4px;color:#fff;display:inline-block;font-size:1rem;font-weight:600;line-height:1.4;overflow:visible;padding:8px 16px;text-decoration:none;width:auto}.btn--secondary-outline{background-color:transparent;border-color:#001b43;color:#001b43}.btn--md{font-size:12px;padding:8px 16px}.btn:after,.btn:before{display:inline-block;font-family:Font Awesome\ 5 Pro;font-size:12px;font-weight:700;transform:translateX(0)}.btn:after{margin-left:8px}.btn:before{margin-right:8px}.btn--pink{background-color:#ffb3a1;color:#1e1e1e}.btn--codgray{background-color:#1e1e1e;color:#fff}.h-100{height:100%}.position-relative{position:relative}svg{max-width:100%}img{font-family:"object-fit:cover;object-position:center;";height:auto;max-width:100%;-o-object-fit:cover;object-fit:cover;-o-object-position:center;object-position:center}svg{max-height:100%}*,:after,:before{box-sizing:border-box}:after,:before{text-decoration:inherit;vertical-align:inherit}html{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;line-height:1.5;scroll-behavior:smooth;-moz-tab-size:4;-o-tab-size:4;tab-size:4;word-break:break-word}body{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;margin:0}h1{font-size:2em;margin:.67em 0}ul ul{margin:0}hr{height:0;overflow:visible}main{display:block}a{background-color:transparent}img,svg{vertical-align:middle}svg:not([fill]){fill:currentColor}svg:not(:root){overflow:hidden}button{margin:0}button{overflow:visible;text-transform:none}button{-webkit-appearance:button}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}::-webkit-input-placeholder{color:inherit;opacity:.54}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}::-moz-focus-inner{padding:0}:-moz-focusring{outline:1px dotted ButtonText}:-moz-ui-invalid{box-shadow:none}a,button{touch-action:manipulation}.section{background-position:50%;background-size:cover;padding-bottom:32px;padding-top:32px;position:relative}@media (min-width:768px){.section{padding-bottom:48px;padding-top:48px}}body{color:#1e1e1e;font-size:16px;font-weight:400;line-height:23px}h1,h2{--headingcolor:$headings-color;color:var(--headingcolor);font-family:Poppins,sans-serif;font-weight:600;line-height:1.5;margin:0 0 16px}h1{font-size:1.75rem;line-height:2rem}@media (min-width:576px){h1{font-size:2.25rem;line-height:2.625rem}}h2{font-size:1.375rem;line-height:1.625rem}@media (min-width:576px){h2{font-size:1.875rem;line-height:2.25rem}}p{line-height:1.75;margin-bottom:16px;margin-top:0}@media (min-width:768px){p{margin-bottom:24px}}a{color:#06f}a{text-decoration:none}hr{background:#f9f9f9;height:1px}hr{border:0;margin-bottom:32px;margin-top:32px}ul{padding-left:1.4em}.back-to-top{align-items:center;background-color:#62a0fb;border-radius:4px;bottom:48px;box-shadow:0 5px 20px rgba(0,27,67,.11);color:#fff;display:none;height:40px;justify-content:center;padding:0;position:fixed;right:48px;width:40px;z-index:20}.back-to-top__icon{transform:translateY(0)}.popup{--cardbackground:#fff;--cardcolor:#001b43;--cardside:#0bd799;background-color:var(--cardbackground);border-radius:30px;color:var(--cardcolor);padding:32px;position:relative}.popup{border-radius:10px}.popup{box-shadow:-2px 18px 65px rgba(0,60,115,.11)}.popup>:last-child:not(.card__reset-padding){margin-bottom:0}.customer__logo,.customer__logo-hover{height:85px;-o-object-fit:contain;object-fit:contain;width:100%}.customer__logo-hover{display:none}.switch--active .customer .customer__logo{display:none}.insight-latest>div:first-child{grid-area:ti}.insight-latest>div:nth-child(2){grid-area:i}.insight-latest>div:nth-child(3){grid-area:t}.insight-latest>div:nth-child(4){grid-area:s}.insight-latest>div:nth-child(5){grid-area:o}.insight-latest>div:nth-child(6){grid-area:th}.insight-latest>div:nth-child(7){grid-area:f}.insight-latest>div:nth-child(8){grid-area:n;justify-self:end}.logo{--logotext:#fff;--logoshape:#fff}.logo__name{fill:var(--logotext)}.logo__shape{fill:var(--logoshape)}.menu-dropdown{-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);background-color:#fff;border-radius:10px;box-shadow:-2px 18px 65px rgba(0,0,0,.4);color:#5c6d87;display:none;gap:1px;grid-template-columns:1fr 1fr;left:15px;opacity:0;overflow:hidden;padding:40px 24px;position:absolute;right:15px;top:var(--dropdownoffset)}@media (min-width:768px){.menu-dropdown{margin:0 auto;max-width:80%}}.menu-dropdown__item{background-color:transparent;color:#5c6d87;display:flex;padding-left:16px;padding-right:16px;padding-top:16px;position:relative}.menu-dropdown__item--highlight{align-items:center;background-color:#f5f9ff;grid-column:2/3;grid-row:1/5;height:calc(100% + 80px);justify-content:center;margin-right:-24px;margin-top:-40px;padding:48px}.menu-dropdown__item--list{border-bottom:2px dotted #d0d0d0;margin-left:-20px;padding-bottom:32px;padding-left:32px}.menu-dropdown__item--list:last-of-type{border:0;padding-bottom:0;position:relative;top:40px}.menu-dropdown__item>:last-child{margin-bottom:0}.menu-dropdown__item>[class^=ri-]{margin-right:12px;margin-top:6px}.menu-dropdown__item--big .menu-dropdown__icon{height:100%;max-height:40px;-o-object-fit:contain;object-fit:contain;-o-object-position:left;object-position:left;width:40px}.menu-dropdown__logo{display:block;height:100%;max-height:40px;-o-object-fit:contain;object-fit:contain;-o-object-position:left;object-position:left;width:40px}@media (min-width:992px){.menu-dropdown__logo{margin-right:16px}}.menu-dropdown__icon{height:17px;margin-right:12px;margin-top:8px;-o-object-fit:contain;object-fit:contain;width:16px}.menu-dropdown__title{color:#001b43;font-size:1rem;margin-bottom:8px}.menu-dropdown__image--small{max-width:180px}.menu-dropdown__text{font-size:14px}.menu-dropdown__link{color:#001b43;display:inline-block;font-weight:700;margin-bottom:16px;position:relative}.menu-dropdown__link:after{background-image:url(/wp-content/themes/socialbrothers/dist/aca4a0c6bc850a574182.svg);background-repeat:no-repeat;background-size:contain;content:"";height:12px;position:absolute;right:-20px;top:6px;width:12px}.menu-dropdown__list-link{align-items:center;color:#001b43;display:block;display:flex;font-size:14px;font-weight:700}.menu-dropdown__list-link:after{background-image:url(/wp-content/themes/socialbrothers/dist/72e69b2e2ae36cb77a42.svg);background-repeat:no-repeat;content:"";height:12px;margin-left:8px;padding-right:12px;width:12px}.menu-dropdown--list{grid-template-rows:1fr auto}.menu-dropdown--list,.menu-dropdown--list_highlight{grid-template-columns:repeat(2,1fr)}.menu-dropdown--contact{grid-template-rows:repeat(2,1fr)}.menu{display:flex;flex-direction:column;margin:0;padding:0}.menu--horizontal{flex-direction:row}@media (max-width:767.98px){.menu--horizontal{flex-direction:column}}.menu__item{list-style:none;position:relative}.menu__link{display:block;padding:8px 16px}@media (min-width:768px){.menu__link{color:var(--headerbase)}}@media (max-width:767.98px){.menu__link{align-items:center;display:flex;font-size:18px;font-weight:700}}.menu--header{font-size:14px}.menu--header .menu__dropdown{display:none}@media (max-width:767.98px){.menu--header .menu__dropdown{background-color:#fff;border-radius:10px;height:auto;left:0;list-style:none;margin:16px 8px;padding:24px 24px 0;position:fixed;top:0;width:calc(100% - 16px);z-index:9}.menu--header .menu__dropdown .menu__sub-link{color:#001b43;display:block;padding:4px 32px}.menu--header .menu__dropdown .menu__sub-link:last-child{padding-bottom:16px}.menu--header .menu__dropdown .menu__sub-item{display:flex;margin-bottom:12px}.menu--header .menu__dropdown .menu__sub-item [class^=ri-]{font-size:26px;margin-right:16px;width:30px}.menu--header .menu__dropdown .menu__sub-item .menu__logo{height:30px;margin-right:16px;-o-object-fit:contain;object-fit:contain;padding:0;width:30px}.menu--header .menu__dropdown .menu__sub-item .menu__link{font-weight:400;width:100%}}@media (max-width:767.98px)and (max-width:767.98px){.menu--header .menu__dropdown .menu__sub-item .menu__link{width:auto}.menu--header .menu__dropdown .menu__sub-item .menu__link:after{background-image:url(/wp-content/themes/socialbrothers/dist/aca4a0c6bc850a574182.svg);background-repeat:no-repeat;content:"";height:15px;position:absolute;right:16px;width:15px}}@media (max-width:767.98px){.menu--header .menu__dropdown .menu__sub-item .menu__link:after{display:none}}@media (max-width:767.98px){.menu--header .menu__dropdown .menu__logo{height:100%;max-height:40px;padding:8px 16px}}.menu--header .menu__link{border-bottom:2px solid transparent;color:var(--headerbase);padding:8px 0 6px}@media (max-width:767.98px){.menu--header .menu__link{padding:8px 16px}}@media (min-width:992px){.menu--header .menu__item{margin-right:48px}.menu--header .menu__item:last-child{margin-right:0}}@media (max-width:767.98px){.menu--header .menu__item{border-bottom:1px solid #d6dbe1;padding-bottom:16px;padding-top:16px}.menu--header .menu__item:last-of-type,.menu--header .menu__item:nth-last-of-type(2){border-bottom:0}.menu--header .menu__item:last-of-type .menu__link:after{display:none}}.menu--header .menu__item .blob{fill:#fff;bottom:var(--dropdownoffsetblob);left:50%;opacity:0;position:absolute;transform:translateX(-20px)}@media (max-width:767.98px){.menu--header .menu__item--button{background-color:#f5f9ff;border-radius:0 0 10px 10px;margin-left:-23px;padding:20px;width:calc(100% + 46px)}}.menu--header .menu__item--button .menu__link{border:1px solid var(--headerbase);border-radius:50px;font-weight:700;padding:8px 16px}@media (max-width:767.98px){.menu--header .menu__item--button .menu__link{display:table;margin:auto}}.menu--top{display:flex;justify-content:flex-end;margin-left:-15px;margin-right:-15px}.menu--top .menu__link{color:var(--headerbase);font-size:12px}.menu--top .menu__link:after{background-image:var(--headerarrow);background-position:50%;background-repeat:no-repeat;content:"";display:inline-block;height:9px;margin-left:4px;width:10px}.menu--top .menu__item--alt .menu__link:after{background-image:var(--headeralt)}.menu__backlink{border-bottom:1px solid #d6dbe1;font-size:18px;font-weight:700;margin-bottom:24px;padding-bottom:24px;padding-left:32px;padding-top:12px;position:relative}.menu__backlink:before{background-image:url(/wp-content/themes/socialbrothers/dist/aca4a0c6bc850a574182.svg);background-repeat:no-repeat;content:"";height:15px;left:8px;position:absolute;top:16px;transform:rotate(180deg);width:15px}.newsletter-subscribe__title{align-self:end;grid-area:title;margin-bottom:0}.newsletter-subscribe__icon{grid-area:image;max-height:160px;-o-object-fit:contain;object-fit:contain;-o-object-position:right;object-position:right;width:100%}.newsletter-subscribe__text{font-size:1rem;grid-area:text;line-height:1.8;margin-bottom:0;max-width:550px}.newsletter-subscribe__hubspot{grid-area:hubspot}.content-overlay{-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);background-color:hsla(0,0%,98%,.4);bottom:0;display:none;left:0;overflow:hidden;position:fixed;right:0;top:0;z-index:10}.popup{overflow:hidden;padding-left:0;padding-right:0;position:relative}.popup__close{height:13px;position:absolute;right:10px;top:10px;width:13px}.popup__close:after,.popup__close:before{background-color:#828282;content:"";height:1px;left:-2px;position:absolute;top:6px;transform:rotate(45deg);width:17px}.popup__close:after{transform:rotate(-45deg)}.popup__body{max-height:70vh;overflow:auto;padding-left:24px;padding-right:24px}.popup__body::-webkit-scrollbar{width:10px}.popup__body::-webkit-scrollbar-track{background:#f0f0f0}.popup__body::-webkit-scrollbar-thumb{background:#ece9f1}.toggler{display:flex;flex-direction:column;height:13px;justify-content:space-between;position:fixed;right:15px;width:16px;z-index:520}.toggler div{background-color:#fff;border-radius:2px;height:2px;width:100%}.toggler div:first-child{transform-origin:right top}.toggler div:nth-child(2){transform-origin:right center}.toggler div:nth-child(3){transform-origin:right bottom}body{--scrollOffsetTop:0;background-color:#fff;display:flex;flex-direction:column;font-family:Poppins,sans-serif;min-height:100vh}body main{flex:1}body>.body{flex:1 0 auto}.container,.header__wrapper{position:relative}@media (min-width:992px){.body>section:first-of-type{padding-top:160px}}@media (max-width:767.98px){.body>section:first-of-type.page-banner-animation{padding-top:0}}.footer__hr{background-color:#a3adbb}.header{--headerbase:#fff;--headertranparent:hsla(0,0%,100%,.5);--headeraccent:#000;--headerbackground:#000;--headerarrow:url(/wp-content/themes/socialbrothers/dist/501152ad32bc70381346.svg);--headeralt:url(/wp-content/themes/socialbrothers/dist/835e7b674a1287f93997.svg);--dropdownoffset:0;--dropdownoffsetblob:-16px;background-color:var(--headerbackground);position:-webkit-sticky;position:sticky;top:0;z-index:10}@media (max-width:767.98px){.header{--headerbase:#000}}@media (min-width:992px){.header{--headerbackground:transparent;display:flex;flex-wrap:wrap;left:0;position:fixed;right:0;transform:translateY(0)}}.header__top{border-bottom:1px solid var(--headertranparent);flex:0 0 100%;max-width:100%}@media (max-width:767.98px){.header__top{display:none}}.header__wrapper{align-items:center;display:flex;justify-content:space-between;padding-bottom:8px;padding-top:8px;position:relative;z-index:10}@media (min-width:768px){.header__wrapper{padding-bottom:16px;padding-top:16px}}.header__megamenu{flex:0 0 100%;max-width:100%;position:relative;z-index:9}.header--black{--headerbase:#000;--headeraccent:#fff;--headertranparent:rgba(0,0,0,.5);--headerarrow:url(/wp-content/themes/socialbrothers/dist/b2e0ff03be7c53526f2e.svg);--headeralt:url(/wp-content/themes/socialbrothers/dist/c6291e6c31cdc4fb9754.svg)}@media (max-width:767.98px){.header--black{--headerbase:#000}}@media (min-width:768px){.header--black .logo{--logoshape:#06f;--logotext:#000}}.header__navigation{margin-left:auto}@media (max-width:767.98px){.header__navigation{background-color:hsla(0,0%,100%,0);inset:0;position:fixed;visibility:hidden;z-index:11}.header__menu{background-color:#06f;height:100%;overflow:auto;padding-top:32px;position:fixed;right:0;top:0;transform:translateX(100%);width:100%;z-index:1}.header__menu-inner{background-color:#fff;border-radius:10px;margin:-16px 8px 8px;padding-left:24px;padding-right:24px;padding-top:24px}}.header__toggler{display:none;height:45px;padding:16px;position:relative;right:auto;top:auto;width:48px}@media (max-width:767.98px){.header__toggler{display:flex}}.mt-sm{margin-top:16px}.text-center{text-align:center}.card-diagram__card--header{grid-area:header}.card-diagram__card--footer{grid-area:footer}.card-diagram__card--left{grid-area:left}.card-diagram__card--right{grid-area:right}.card-diagram__card--top{grid-area:top}.card-diagram__card--bottom{grid-area:bottom}.popup-card__text{grid-area:text}.popup-card__container{grid-area:image;position:relative}.infographic__item--a{grid-area:a}.infographic__item--b{grid-area:b}.infographic__item--c{display:flex;flex-direction:column;grid-area:c;justify-content:center;width:calc(100% - 32px)}.infographic__item--d{grid-area:d}.infographic__item--e{grid-area:e;padding:16px 8px}.infographic__item--f{grid-area:f}.infographic__item--g{grid-area:g}.infographic__item--h{grid-area:h}.infographic__item--i{grid-area:i;padding:16px}.infographic__extenden-button:first-child{grid-area:left}.infographic__extenden-button:nth-child(2){grid-area:topright}.infographic__extenden-button:nth-child(3){grid-area:bottomright}.logos .subtitle{text-align:center}.logo-grid{display:grid;gap:32px;grid-template-columns:repeat(2,1fr)}@media (min-width:768px){.logo-grid{grid-template-columns:repeat(5,1fr)}}.logo-grid__logo{align-items:center;align-self:center;justify-self:center;max-height:52px;-o-object-fit:contain;object-fit:contain;-o-object-position:center;object-position:center;width:auto}@media (min-width:768px){.logo-grid__logo{max-height:72px}}.logo-grid__logo--gray{filter:grayscale(1)}.logo-grid__item{align-items:center;display:flex;flex:0 0 50%;justify-content:center}@media (min-width:768px){.logo-grid__item{flex:0 0 14%}}.logo-grid--center{display:grid;grid-template-columns:repeat(2,1fr);grid-template-rows:auto}@media (min-width:768px){.logo-grid--center{grid-template-columns:repeat(10,1fr)}.logo-grid--center .logo-grid__item:first-of-type{grid-column:2/4;grid-row:1/2}.logo-grid--center .logo-grid__item:nth-of-type(2){grid-column:4/6;grid-row:1/2}.logo-grid--center .logo-grid__item:nth-of-type(3){grid-column:6/8;grid-row:1/2}.logo-grid--center .logo-grid__item:nth-of-type(4){grid-column:8/10;grid-row:1/2}.logo-grid--center .logo-grid__item:nth-of-type(5){grid-column:1/3;grid-row:2/-1}.logo-grid--center .logo-grid__item:nth-of-type(6){grid-column:3/5;grid-row:2/-1}.logo-grid--center .logo-grid__item:nth-of-type(7){grid-column:5/7;grid-row:2/-1}.logo-grid--center .logo-grid__item:nth-of-type(8){grid-column:7/9;grid-row:2/-1}.logo-grid--center .logo-grid__item:nth-of-type(9){grid-column:9/11;grid-row:2/-1}}.page-banner-animation{color:#000}@media (min-width:768px){.page-banner-animation{margin:-16px 0}}.page-banner-animation__inner{border-radius:4px;margin-left:-16px;padding:24px 16px 0;width:calc(100% + 32px)}@media (min-width:768px){.page-banner-animation__inner{padding:40px 0 0 32px}}@media (min-width:992px){.page-banner-animation__inner{padding:104px 0 0 64px}}.page-banner-animation__inner--blue{background-color:#06f;color:#fff}.page-banner-animation__inner--blue .page-banner-animation__content p{color:#fff}.page-banner-animation__button{margin-bottom:24px;margin-right:16px}@media (min-width:768px){.page-banner-animation__button{margin-bottom:80px}}.page-banner-animation__player{margin-top:32px;max-height:450px;overflow:hidden}@media (min-width:768px){.page-banner-animation__player{margin-top:0}}.page-banner-animation__player lottie-player{max-height:450px}.page-banner-animation__content{color:#1e1e1e}.text-columns-image__image-small{width:100%}@media (min-width:768px){.text-columns-image__image-small{display:none}}@media (max-width:575.98px){.text-repeater-image__button{display:none}}.text-repeater-image__content .text-repeater-image__button{display:block}@media (min-width:576px){.text-repeater-image__content .text-repeater-image__button{display:none}}.color-sample{line-height:1.375rem;margin:0;padding-left:40px;position:relative}@media (max-width:767.98px){.color-sample{font-size:.8125rem}}.color-sample:before{border-radius:4px;content:"";display:block;height:14px;left:0;position:absolute;top:50%;transform:translateY(-50%);width:30px}.color-sample--light-blue:before{background-color:#99c2ff}.color-sample--light-blue-blue:before{background:linear-gradient(90deg,#99c2ff,#06f)}.color-sample--blue:before{background-color:#06f}.color-sample--yellow:before{background-color:#ffcd34}.color-sample--pink:before{background-color:#ffb3a1}.dates{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}@media (min-width:768px){.dates{display:none}}.dates__date{background-color:#fff;border-radius:20px;box-shadow:0 5px 20px rgba(0,27,67,.11);font-size:.8125rem;font-weight:600;padding:0 8px}.dates__date.active{background-color:#06f;color:#fff}</style><link rel="preload" href="https://fintechos.com/wp-content/cache/min/1/de2d9cfa8e1f2adb42dceb65004597b7.css" data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" onerror="this.removeAttribute('data-rocket-async')"  media="all" data-minify="1" /><meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+
+	<!-- This site is optimized with the Yoast SEO Premium plugin v18.3 (Yoast SEO v19.0) - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>FintechOS | The digital banking and insurance platform</title>
+	<meta name="description" content="FintechOS provides customer-centric technology to empower the banking and insurance industry. We enable innovative services embedded in consumers&#039; daily lives." />
+	<link rel="canonical" href="https://fintechos.com/" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="FintechOS – Customer Centric Platform for Banks and Insurers" />
+	<meta property="og:description" content="The FintechOS platform empowers any organization to create innovative financial products to meet changing consumer needs." />
+	<meta property="og:url" content="https://fintechos.com/" />
+	<meta property="og:site_name" content="FintechOS" />
+	<meta property="article:modified_time" content="2022-06-16T13:55:18+00:00" />
+	<meta property="og:image" content="https://fintechos.com/wp-content/uploads/2022/06/Fintechos-hp-featured-og.png" />
+	<meta property="og:image:width" content="1200" />
+	<meta property="og:image:height" content="630" />
+	<meta property="og:image:type" content="image/png" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://fintechos.com/#website","url":"https://fintechos.com/","name":"FintechOS","description":"We’re building the future of financial technology. So you don’t have to.","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://fintechos.com/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"en-US"},{"@type":"ImageObject","inLanguage":"en-US","@id":"https://fintechos.com/#primaryimage","url":"https://fintechos.com/wp-content/uploads/2022/06/Fintechos-hp-featured-og.png","contentUrl":"https://fintechos.com/wp-content/uploads/2022/06/Fintechos-hp-featured-og.png","width":1200,"height":630},{"@type":"WebPage","@id":"https://fintechos.com/#webpage","url":"https://fintechos.com/","name":"FintechOS | The digital banking and insurance platform","isPartOf":{"@id":"https://fintechos.com/#website"},"primaryImageOfPage":{"@id":"https://fintechos.com/#primaryimage"},"datePublished":"2022-06-10T11:05:45+00:00","dateModified":"2022-06-16T13:55:18+00:00","description":"FintechOS provides customer-centric technology to empower the banking and insurance industry. We enable innovative services embedded in consumers' daily lives.","breadcrumb":{"@id":"https://fintechos.com/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://fintechos.com/"]}]},{"@type":"BreadcrumbList","@id":"https://fintechos.com/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home"}]}]}</script>
+	<!-- / Yoast SEO Premium plugin. -->
+
+
+<link rel='dns-prefetch' href='//js.hs-scripts.com' />
+
+
+<style id='global-styles-inline-css' type='text/css'>
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+</style>
+
+<style id='rocket-lazyload-inline-css' type='text/css'>
+.rll-youtube-player{position:relative;padding-bottom:56.23%;height:0;overflow:hidden;max-width:100%;}.rll-youtube-player:focus-within{outline: 2px solid currentColor;outline-offset: 5px;}.rll-youtube-player iframe{position:absolute;top:0;left:0;width:100%;height:100%;z-index:100;background:0 0}.rll-youtube-player img{bottom:0;display:block;left:0;margin:auto;max-width:100%;width:100%;position:absolute;right:0;top:0;border:none;height:auto;-webkit-transition:.4s all;-moz-transition:.4s all;transition:.4s all}.rll-youtube-player img:hover{-webkit-filter:brightness(75%)}.rll-youtube-player .play{height:100%;width:100%;left:0;top:0;position:absolute;background:url(https://fintechos.com/wp-content/plugins/wp-rocket/assets/img/youtube.png) no-repeat center;background-color: transparent !important;cursor:pointer;border:none;}
+</style>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://fintechos.com/wp-includes/js/jquery/jquery.min.js?ver=3.6.0' id='jquery-core-js'></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://fintechos.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2' id='jquery-migrate-js'></script>
+<!-- HFCM by 99 Robots - Snippet # 2: Google Tag Manager -->
+<!-- Google Tag Manager -->
+	<script>
+		(function(w, d, s, l, i) {
+			w[l] = w[l] || [];
+			w[l].push({
+				'gtm.start': new Date().getTime(),
+				event: 'gtm.js'
+			});
+			var f = d.getElementsByTagName(s)[0],
+				j = d.createElement(s),
+				dl = l != 'dataLayer' ? '&l=' + l : '';
+			j.async = true;
+			j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+			f.parentNode.insertBefore(j, f);
+		})(window, document, 'script', 'dataLayer', 'GTM-MDL8FM7');
+	</script>
+	<!-- End Google Tag Manager -->
+<!-- /end HFCM by 99 Robots -->
+			<!-- DO NOT COPY THIS SNIPPET! Start of Page Analytics Tracking for HubSpot WordPress plugin v8.13.58-->
+			<script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+				var _hsq = _hsq || [];
+				_hsq.push(["setContentId", "standard-page"]);
+			</script>
+			<!-- DO NOT COPY THIS SNIPPET! End of Page Analytics Tracking for HubSpot WordPress plugin -->
+			<link rel="icon" href="https://fintechos.com/wp-content/uploads/2022/01/cropped-cropped-Group-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://fintechos.com/wp-content/uploads/2022/01/cropped-cropped-Group-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://fintechos.com/wp-content/uploads/2022/01/cropped-cropped-Group-180x180.png" />
+<meta name="msapplication-TileImage" content="https://fintechos.com/wp-content/uploads/2022/01/cropped-cropped-Group-270x270.png" />
+<noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript><script type="rocketlazyloadscript">
+/*! loadCSS rel=preload polyfill. [c]2017 Filament Group, Inc. MIT License */
+(function(w){"use strict";if(!w.loadCSS){w.loadCSS=function(){}}
+var rp=loadCSS.relpreload={};rp.support=(function(){var ret;try{ret=w.document.createElement("link").relList.supports("preload")}catch(e){ret=!1}
+return function(){return ret}})();rp.bindMediaToggle=function(link){var finalMedia=link.media||"all";function enableStylesheet(){link.media=finalMedia}
+if(link.addEventListener){link.addEventListener("load",enableStylesheet)}else if(link.attachEvent){link.attachEvent("onload",enableStylesheet)}
+setTimeout(function(){link.rel="stylesheet";link.media="only x"});setTimeout(enableStylesheet,3000)};rp.poly=function(){if(rp.support()){return}
+var links=w.document.getElementsByTagName("link");for(var i=0;i<links.length;i++){var link=links[i];if(link.rel==="preload"&&link.getAttribute("as")==="style"&&!link.getAttribute("data-loadcss")){link.setAttribute("data-loadcss",!0);rp.bindMediaToggle(link)}}};if(!rp.support()){rp.poly();var run=w.setInterval(rp.poly,500);if(w.addEventListener){w.addEventListener("load",function(){rp.poly();w.clearInterval(run)})}else if(w.attachEvent){w.attachEvent("onload",function(){rp.poly();w.clearInterval(run)})}}
+if(typeof exports!=="undefined"){exports.loadCSS=loadCSS}
+else{w.loadCSS=loadCSS}}(typeof global!=="undefined"?global:this))
+</script>
+</head>
+
+<body class="home page-template-default page page-id-20259">
+
+  
+<header class="header header--black">
+  <div class="header__top">
+    <div class="container">
+      <ul class="menu menu--horizontal menu--top"><li id="menu__item--17890" class="menu__item--alt menu__item menu__item--type-custom menu__item--object-custom menu__item--17890"><a target="_blank"href="https://leap.fintechos.com"class="menu__link">FintechOS Leap</a></li>
+<li id="menu__item--17891" class="menu__item--alt menu__item menu__item--type-custom menu__item--object-custom menu__item--17891"><a target="_blank"href="https://academy.fintechos.com/learn"class="menu__link">Academy</a></li>
+<li id="menu__item--17892" class="menu__item--alt menu__item menu__item--type-custom menu__item--object-custom menu__item--17892"><a target="_blank"href="https://marketplace.fintechos.com/"class="menu__link">Marketplace</a></li>
+<li id="menu__item--17893" class="menu__item--alt menu__item menu__item--type-custom menu__item--object-custom menu__item--17893"><a target="_blank"href="https://partners.fintechos.com/English/"class="menu__link">Partners</a></li>
+<li id="menu__item--17894" class="menu__item--alt menu__item menu__item--type-custom menu__item--object-custom menu__item--17894"><a target="_blank"href="https://docs.fintechos.com/home.htm"class="menu__link">Documentation</a></li>
+<li id="menu__item--17895" class="menu__item--alt menu__item menu__item--type-custom menu__item--object-custom menu__item--17895"><a target="_blank"href="https://inside.fintechos.com/"class="menu__link">We’re hiring!</a></li>
+</ul>    </div>
+  </div>
+  <div class="header__wrapper">
+    <a class="header__brand" href="https://fintechos.com/">
+      <svg width="164" height="29" fill="none" xmlns="http://www.w3.org/2000/svg" class="logo"><path class="logo__name" d="M47.846 10.214v14.593h-1.925V12.108H39.96v12.73h-1.925v-12.73H35.55v-1.863h2.484v-.59c0-3.726 2.049-5.588 6.116-5.588.808 0 1.739.124 2.795.341v1.739a16.41 16.41 0 00-2.795-.249c-2.918 0-4.191 1.025-4.191 3.726v.59h7.886zm16.611 5.652v8.942h-1.925v-8.942c0-2.608-1.428-4.098-3.974-4.098-2.794 0-4.72 1.707-4.72 5.433v7.638h-1.924V10.246h1.925v2.267c1.086-1.739 2.7-2.64 4.905-2.64 3.54 0 5.713 2.33 5.713 5.993zm11.488-3.757h-4.222v8.849c0 2.515 1.397 2.298 4.191 2.173v1.677c-4.098.62-6.116-.497-6.116-3.881v-8.818h-3.043v-1.863h3.074V6.738l1.925-.59v4.098h4.191v1.863zm14.283.062c1.335 1.522 2.018 3.322 2.018 5.403 0 .217-.031.527-.062.9H79.392c.372 2.95 2.67 4.813 5.806 4.813 2.204 0 3.88-.994 4.688-2.484l1.677.993c-1.273 2.08-3.602 3.354-6.427 3.354-2.298 0-4.16-.715-5.589-2.174-1.428-1.428-2.173-3.26-2.173-5.496 0-2.173.714-4.005 2.142-5.464 1.428-1.46 3.229-2.174 5.495-2.174 2.143.031 3.913.808 5.217 2.33zm-10.867 4.44h10.867c-.218-1.552-.776-2.732-1.77-3.602-.994-.869-2.173-1.273-3.477-1.273-3.012 0-5.217 1.987-5.62 4.875zm17.263 6.365c-1.46-1.49-2.174-3.291-2.174-5.464 0-2.174.714-3.975 2.174-5.434 1.459-1.49 3.29-2.204 5.495-2.204 2.888 0 5.341 1.49 6.396 3.819l-1.583.9c-.776-1.739-2.639-2.857-4.813-2.857-1.614 0-2.98.56-4.098 1.677-1.118 1.118-1.677 2.484-1.677 4.099 0 1.614.56 2.98 1.677 4.098 1.118 1.118 2.484 1.677 4.098 1.677 2.174 0 3.975-1.118 4.937-2.857l1.615.932c-1.211 2.328-3.695 3.788-6.521 3.788-2.235 0-4.067-.715-5.526-2.174zm27.323-7.11v8.942h-1.925v-8.942c0-2.608-1.428-4.098-3.974-4.098-2.795 0-4.72 1.707-4.72 5.433v7.638h-1.925V4.41h1.925v8.104c1.087-1.74 2.702-2.64 4.906-2.64 3.509 0 5.713 2.33 5.713 5.993zm13.413 9.284c-2.95 0-5.465-1.025-7.483-3.074-2.049-2.08-3.074-4.564-3.074-7.483 0-2.95 1.025-5.434 3.074-7.483 2.049-2.08 4.564-3.105 7.483-3.105 2.949 0 5.464 1.025 7.483 3.105 2.049 2.05 3.073 4.533 3.073 7.483 0 2.95-1.024 5.433-3.073 7.483-2.019 2.08-4.534 3.073-7.483 3.073zm0-1.957c2.422 0 4.44-.807 6.054-2.484 1.646-1.676 2.453-3.694 2.453-6.085 0-2.39-.807-4.409-2.453-6.055-1.645-1.676-3.632-2.515-6.054-2.515s-4.44.839-6.055 2.515c-1.645 1.677-2.453 3.664-2.453 6.055 0 2.39.808 4.44 2.453 6.085 1.615 1.646 3.633 2.484 6.055 2.484zm12.171-3.011l1.739-1.025c.714 2.546 2.732 4.037 5.868 4.037 3.043 0 4.813-1.46 4.813-3.664 0-1.087-.373-1.863-1.18-2.422-.776-.559-2.08-1.118-3.85-1.677-2.142-.714-3.54-1.242-4.192-1.676-1.552-.932-2.328-2.267-2.328-4.068 0-1.707.621-3.105 1.8-4.098 1.211-1.025 2.671-1.522 4.471-1.522 3.167 0 5.589 1.832 6.738 4.41l-1.708.962c-.931-2.236-2.608-3.384-5.03-3.384-2.546 0-4.222 1.304-4.222 3.54 0 1.024.341 1.769 1.055 2.266.715.496 1.863 1.024 3.478 1.552l1.583.559c.311.093.777.248 1.398.528.621.248 1.086.434 1.366.652.59.341 1.614 1.056 1.956 1.708.372.62.714 1.583.714 2.639 0 1.707-.652 3.136-1.894 4.16-1.242 1.025-2.919 1.553-4.999 1.553-3.726-.063-6.52-1.925-7.576-5.03z"/><path class="logo__shape" d="M25.833 0c0 1.087-.466 2.08-1.15 2.825a3.962 3.962 0 01-2.825 1.15H7.421A3.459 3.459 0 003.974 7.42v14.437A3.962 3.962 0 010 25.833V6.644A6.652 6.652 0 016.644 0h19.189zM3.136 28.938c0-1.087.465-2.08 1.149-2.826a3.962 3.962 0 012.825-1.149h14.438a3.458 3.458 0 003.446-3.446V7.079a3.962 3.962 0 013.974-3.974v19.188a6.652 6.652 0 01-6.644 6.645H3.136z"/></svg>    </a>
+
+    <div class="header__navigation">
+      <div class="header__menu">
+                  <div class="header__menu-inner">
+            <ul class="menu menu--header menu--horizontal">
+                                                <li class="menu__item menu__item--dropdown" data-dropdown="0" menu="0">
+                    <div class="menu__link">Platform</div>
+                    <?xml version="1.0" encoding="utf-8"?>
+<svg class="blob" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="15" width="40"
+	 viewBox="0 0 29.2 11.2">
+<g>
+	<path  d="M24.2,8.3l-6.6-7c-1.6-1.7-4.2-1.7-5.8,0l-6.6,7C3.7,9.8,1.9,10.8,0,11.2h29.2C28.5,11.1,25.5,9.8,24.2,8.3z"
+		/>
+</g>
+</svg>
+                    <ul class="menu__dropdown">
+                      <div class="d-block d-lg-none menu__backlink">
+                        Back to menu                      </div>
+                      
+<li class="menu__sub-item">
+  <a class="menu__link" href="/lighthouse/">
+    <img width="43" height="43" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2043%2043'%3E%3C/svg%3E" class="menu__logo" alt="" data-lazy-src="https://fintechos.com/wp-content/uploads/2022/01/lighthouse-1.svg" /><noscript><img width="43" height="43" src="https://fintechos.com/wp-content/uploads/2022/01/lighthouse-1.svg" class="menu__logo" alt="" /></noscript>Lighthouse  </a>
+</li>
+<li class="menu__sub-item">
+  <a class="menu__link" href="/lean-core/">
+    <i class="ri-settings-fill" aria-hidden="true"></i>FintechOS Lean Core  </a>
+</li>
+<li class="menu__sub-item">
+  <a class="menu__link" href="/northstar/">
+    <img width="53" height="52" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2053%2052'%3E%3C/svg%3E" class="menu__logo" alt="" data-lazy-src="https://fintechos.com/wp-content/uploads/2022/01/northstar-1.svg" /><noscript><img width="53" height="52" src="https://fintechos.com/wp-content/uploads/2022/01/northstar-1.svg" class="menu__logo" alt="" /></noscript>Northstar  </a>
+</li>
+<li class="menu__sub-item">
+  <a class="menu__link" href="/ecosystem-hub/">
+    <i class="ri-cloud-fill" aria-hidden="true"></i>FintechOS Ecosystem Hub  </a>
+</li>
+<li class="menu__sub-item">
+  <a class="menu__link" href="/innovation-studio/">
+    <img width="33" height="45" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2033%2045'%3E%3C/svg%3E" class="menu__logo" alt="" data-lazy-src="https://fintechos.com/wp-content/uploads/2022/01/innovation-studio-1.svg" /><noscript><img width="33" height="45" src="https://fintechos.com/wp-content/uploads/2022/01/innovation-studio-1.svg" class="menu__logo" alt="" /></noscript>Innovation studio  </a>
+</li>
+<li class="menu__sub-item">
+  <a class="menu__link" href="https://fintechos.com/deployment-and-security/">
+    <i class="ri-rocket-fill" aria-hidden="true"></i>Deployment and Security  </a>
+</li>
+<li class="menu__sub-item">
+  <a class="menu__link" href="http://marketplace.fintechos.com">
+    <img width="49" height="49" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2049%2049'%3E%3C/svg%3E" class="menu__logo" alt="" data-lazy-src="https://fintechos.com/wp-content/uploads/2022/01/FintechOS_Marketplace_Logo.svg" /><noscript><img width="49" height="49" src="https://fintechos.com/wp-content/uploads/2022/01/FintechOS_Marketplace_Logo.svg" class="menu__logo" alt="" /></noscript>Marketplace  </a>
+</li>
+<li class="menu__sub-item">
+  <a class="menu__link" href="/releases/fintechos-22/">
+    <img width="200" height="197" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20197'%3E%3C/svg%3E" class="menu__logo" alt="" data-lazy-src="https://fintechos.com/wp-content/uploads/2022/01/fintechos-22-200x197-1.png" /><noscript><img width="200" height="197" src="https://fintechos.com/wp-content/uploads/2022/01/fintechos-22-200x197-1.png" class="menu__logo" alt="" /></noscript>FintechOS 22  </a>
+</li>                    </ul>
+                  </li>
+                                                                <li class="menu__item menu__item--dropdown" data-dropdown="1" menu="1">
+                    <div class="menu__link">Industries</div>
+                    <?xml version="1.0" encoding="utf-8"?>
+<svg class="blob" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="15" width="40"
+	 viewBox="0 0 29.2 11.2">
+<g>
+	<path  d="M24.2,8.3l-6.6-7c-1.6-1.7-4.2-1.7-5.8,0l-6.6,7C3.7,9.8,1.9,10.8,0,11.2h29.2C28.5,11.1,25.5,9.8,24.2,8.3z"
+		/>
+</g>
+</svg>
+                    <ul class="menu__dropdown">
+                      <div class="d-block d-lg-none menu__backlink">
+                        Back to menu                      </div>
+                      
+<li class="menu__sub-item">
+  <a class="menu__link" href="/industry/retail-banking/">
+    <i class="ri-user-heart-fill" aria-hidden="true"></i>Retail Banking  </a>
+</li>
+<li class="menu__sub-item">
+  <a class="menu__link" href="/industry/sme-banking">
+    <i class="ri-shopping-cart-2-fill" aria-hidden="true"></i>SME Banking  </a>
+</li>
+<li class="menu__sub-item">
+  <a class="menu__link" href="/industry/general-insurance">
+    <i class="ri-home-4-fill" aria-hidden="true"></i>General Insurance  </a>
+</li>
+<li class="menu__sub-item">
+  <a class="menu__link" href="/industry/life-insurance">
+    <i class="ri-team-fill" aria-hidden="true"></i>Life Insurance  </a>
+</li>
+<li class="menu__sub-item">
+  <a class="menu__link" href="/industry/health-insurance">
+    <i class="ri-health-book-fill" aria-hidden="true"></i>Health Insurance  </a>
+</li>
+<li class="menu__sub-item">
+  <a class="menu__link" href="https://fintechos.com/demo/">
+    <i class="ri-file-info-fill" aria-hidden="true"></i>Book a demo  </a>
+</li>                    </ul>
+                  </li>
+                                                                <li class="menu__item menu__item--dropdown" data-dropdown="2" menu="2">
+                    <div class="menu__link">Ecosystem</div>
+                    <?xml version="1.0" encoding="utf-8"?>
+<svg class="blob" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="15" width="40"
+	 viewBox="0 0 29.2 11.2">
+<g>
+	<path  d="M24.2,8.3l-6.6-7c-1.6-1.7-4.2-1.7-5.8,0l-6.6,7C3.7,9.8,1.9,10.8,0,11.2h29.2C28.5,11.1,25.5,9.8,24.2,8.3z"
+		/>
+</g>
+</svg>
+                    <ul class="menu__dropdown">
+                      <div class="d-block d-lg-none menu__backlink">
+                        Back to menu                      </div>
+                      
+<li class="menu__sub-item">
+  <a class="menu__link" href="/partners/">
+    <i class="ri-heart-2-fill" aria-hidden="true"></i>Partners  </a>
+</li>
+<li class="menu__sub-item">
+  <a class="menu__link" href="/customers/">
+    <i class="ri-user-3-fill" aria-hidden="true"></i>Customers  </a>
+</li>
+<li class="menu__sub-item">
+  <a class="menu__link" href="/services-and-support/">
+    <i class="ri-customer-service-2-fill" aria-hidden="true"></i>Services and Support  </a>
+</li>
+<li class="menu__sub-item">
+  <a class="menu__link" href="/academy/">
+    <i class="ri-book-open-fill" aria-hidden="true"></i>Academy  </a>
+</li>                    </ul>
+                  </li>
+                                                                <li class="menu__item menu__item--dropdown" data-dropdown="3" menu="3">
+                    <div class="menu__link"> Insights</div>
+                    <?xml version="1.0" encoding="utf-8"?>
+<svg class="blob" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="15" width="40"
+	 viewBox="0 0 29.2 11.2">
+<g>
+	<path  d="M24.2,8.3l-6.6-7c-1.6-1.7-4.2-1.7-5.8,0l-6.6,7C3.7,9.8,1.9,10.8,0,11.2h29.2C28.5,11.1,25.5,9.8,24.2,8.3z"
+		/>
+</g>
+</svg>
+                    <ul class="menu__dropdown">
+                      <div class="d-block d-lg-none menu__backlink">
+                        Back to menu                      </div>
+                      
+<li class="menu__sub-item">
+  <a class="menu__link" href="https://fintechos.com/insights/">
+    <i class="ri-bar-chart-fill" aria-hidden="true"></i>Insights  </a>
+</li>
+<li class="menu__sub-item">
+  <a class="menu__link" href="https://fintechos.com/webinars/">
+    <i class="ri-video-fill" aria-hidden="true"></i>Webinars  </a>
+</li>
+<li class="menu__sub-item">
+  <a class="menu__link" href="https://fintechos.com/blog/">
+    <i class="ri-computer-fill" aria-hidden="true"></i>Blog  </a>
+</li>
+<li class="menu__sub-item">
+  <a class="menu__link" href="https://fintechos.com/whitepapers/">
+    <i class="ri-article-fill" aria-hidden="true"></i>Whitepapers  </a>
+</li>
+<li class="menu__sub-item">
+  <a class="menu__link" href="https://fintechos.com/case-studies/">
+    <i class="ri-file-search-fill" aria-hidden="true"></i>Case studies  </a>
+</li>
+<li class="menu__sub-item">
+  <a class="menu__link" href="https://fintechos.com/newsroom/">
+    <i class="ri-newspaper-fill" aria-hidden="true"></i>Newsroom  </a>
+</li>
+<li class="menu__sub-item">
+  <a class="menu__link" href="https://fintechos.com/events/">
+    <i class="ri-newspaper-fill" aria-hidden="true"></i>Events  </a>
+</li>
+<li class="menu__sub-item">
+  <a class="menu__link" href="/newsletters/">
+    <i class="ri-article-fill" aria-hidden="true"></i>Newsletters  </a>
+</li>                    </ul>
+                  </li>
+                                                                <li class="menu__item menu__item--dropdown" data-dropdown="4" menu="4">
+                    <div class="menu__link">About us</div>
+                    <?xml version="1.0" encoding="utf-8"?>
+<svg class="blob" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="15" width="40"
+	 viewBox="0 0 29.2 11.2">
+<g>
+	<path  d="M24.2,8.3l-6.6-7c-1.6-1.7-4.2-1.7-5.8,0l-6.6,7C3.7,9.8,1.9,10.8,0,11.2h29.2C28.5,11.1,25.5,9.8,24.2,8.3z"
+		/>
+</g>
+</svg>
+                    <ul class="menu__dropdown">
+                      <div class="d-block d-lg-none menu__backlink">
+                        Back to menu                      </div>
+                      
+<li class="menu__sub-item">
+  <img width="512" height="512" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20512%20512'%3E%3C/svg%3E" class="menu__logo" alt="" data-lazy-srcset="https://fintechos.com/wp-content/uploads/2022/01/cropped-Group.png 512w, https://fintechos.com/wp-content/uploads/2022/01/cropped-Group-300x300.png 300w, https://fintechos.com/wp-content/uploads/2022/01/cropped-Group-150x150.png 150w" data-lazy-sizes="(max-width: 512px) 100vw, 512px" data-lazy-src="https://fintechos.com/wp-content/uploads/2022/01/cropped-Group.png" /><noscript><img width="512" height="512" src="https://fintechos.com/wp-content/uploads/2022/01/cropped-Group.png" class="menu__logo" alt="" srcset="https://fintechos.com/wp-content/uploads/2022/01/cropped-Group.png 512w, https://fintechos.com/wp-content/uploads/2022/01/cropped-Group-300x300.png 300w, https://fintechos.com/wp-content/uploads/2022/01/cropped-Group-150x150.png 150w" sizes="(max-width: 512px) 100vw, 512px" /></noscript>  <div>
+    <a class="menu__link" href="https://fintechos.com/about-us/">
+      About us    </a>
+                  <a class="menu__sub-link" href="https://fintechos.com/about-us/">
+          About us        </a>
+            </div>
+</li>
+<li class="menu__sub-item">
+  <img width="37" height="37" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2037%2037'%3E%3C/svg%3E" class="menu__logo" alt="" data-lazy-src="https://fintechos.com/wp-content/uploads/2022/01/inside-fintechOS-1.svg" /><noscript><img width="37" height="37" src="https://fintechos.com/wp-content/uploads/2022/01/inside-fintechOS-1.svg" class="menu__logo" alt="" /></noscript>  <div>
+    <a class="menu__link" href="https://inside.fintechos.com">
+      Inside FintechOS    </a>
+                  <a class="menu__sub-link" href="https://inside.fintechos.com">
+          Inside FintechOS        </a>
+            </div>
+</li>                    </ul>
+                  </li>
+                                                                <li class="menu__item menu__item--button">
+                    <a class="menu__link" href="https://fintechos.com/demo/">
+                      Book a demo                    </a>
+                  </li>
+                                          </ul>
+          </div>
+              </div>
+    </div>
+
+    <div class="header__toggler toggler">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+  
+<div class="header__megamenu">
+  <div class="container position-relative">
+                  <div class="menu-dropdown menu-dropdown--list" dropdown="0" data-menu="0">
+          
+<a href="/lighthouse/" class="menu-dropdown__item menu-dropdown__item--big">
+  <img width="43" height="43" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2043%2043'%3E%3C/svg%3E" class="menu-dropdown__icon" alt="" data-lazy-src="https://fintechos.com/wp-content/uploads/2022/01/lighthouse-1.svg" /><noscript><img width="43" height="43" src="https://fintechos.com/wp-content/uploads/2022/01/lighthouse-1.svg" class="menu-dropdown__icon" alt="" /></noscript>  <div class="menu-dropdown__content">
+
+    <h2 class="menu-dropdown__title arrow-pale">
+      Lighthouse    </h2>
+
+          <p class="menu-dropdown__text">
+        Smarter products and personalized experience for banking      </p>
+        <div class="menu-dropdown__link d-none">
+      Read more    </div>
+
+  </div>
+</a>
+<a href="/lean-core/" class="menu-dropdown__item">
+  <i class="ri-settings-fill" aria-hidden="true"></i>  <div class="menu-dropdown__content">
+
+    <h2 class="menu-dropdown__title arrow-pale">
+      FintechOS Lean Core    </h2>
+
+          <p class="menu-dropdown__text">
+        FintechOS Lean Core offers speed-to-market in a flexible and scalable way      </p>
+        <div class="menu-dropdown__link d-none">
+      Read more    </div>
+
+  </div>
+</a>
+<a href="/northstar/" class="menu-dropdown__item menu-dropdown__item--big">
+  <img width="53" height="52" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2053%2052'%3E%3C/svg%3E" class="menu-dropdown__icon" alt="" data-lazy-src="https://fintechos.com/wp-content/uploads/2022/01/northstar-1.svg" /><noscript><img width="53" height="52" src="https://fintechos.com/wp-content/uploads/2022/01/northstar-1.svg" class="menu-dropdown__icon" alt="" /></noscript>  <div class="menu-dropdown__content">
+
+    <h2 class="menu-dropdown__title arrow-pale">
+      Northstar    </h2>
+
+          <p class="menu-dropdown__text">
+        Make insurance products smarter, and build end-to-end digital journeys      </p>
+        <div class="menu-dropdown__link d-none">
+      Read more    </div>
+
+  </div>
+</a>
+<a href="/ecosystem-hub/" class="menu-dropdown__item">
+  <i class="ri-cloud-fill" aria-hidden="true"></i>  <div class="menu-dropdown__content">
+
+    <h2 class="menu-dropdown__title arrow-pale">
+      FintechOS Ecosystem Hub    </h2>
+
+          <p class="menu-dropdown__text">
+        Be at the forefront of the open banking revolution      </p>
+        <div class="menu-dropdown__link d-none">
+      Read more    </div>
+
+  </div>
+</a>
+<a href="/innovation-studio/" class="menu-dropdown__item menu-dropdown__item--big">
+  <img width="33" height="45" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2033%2045'%3E%3C/svg%3E" class="menu-dropdown__icon" alt="" data-lazy-src="https://fintechos.com/wp-content/uploads/2022/01/innovation-studio-1.svg" /><noscript><img width="33" height="45" src="https://fintechos.com/wp-content/uploads/2022/01/innovation-studio-1.svg" class="menu-dropdown__icon" alt="" /></noscript>  <div class="menu-dropdown__content">
+
+    <h2 class="menu-dropdown__title arrow-pale">
+      Innovation studio    </h2>
+
+          <p class="menu-dropdown__text">
+        Design your own products and customer journeys      </p>
+        <div class="menu-dropdown__link d-none">
+      Read more    </div>
+
+  </div>
+</a>
+<a href="https://fintechos.com/deployment-and-security/" class="menu-dropdown__item">
+  <i class="ri-rocket-fill" aria-hidden="true"></i>  <div class="menu-dropdown__content">
+
+    <h2 class="menu-dropdown__title arrow-pale">
+      Deployment and Security    </h2>
+
+          <p class="menu-dropdown__text">
+        Our cloud banking platform lives up to the highest banking industry security standards      </p>
+        <div class="menu-dropdown__link d-none">
+      Read more    </div>
+
+  </div>
+</a>
+<a href="http://marketplace.fintechos.com" class="menu-dropdown__item menu-dropdown__item--big" target="__blank">
+  <img width="49" height="49" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2049%2049'%3E%3C/svg%3E" class="menu-dropdown__icon" alt="" data-lazy-src="https://fintechos.com/wp-content/uploads/2022/01/FintechOS_Marketplace_Logo.svg" /><noscript><img width="49" height="49" src="https://fintechos.com/wp-content/uploads/2022/01/FintechOS_Marketplace_Logo.svg" class="menu-dropdown__icon" alt="" /></noscript>  <div class="menu-dropdown__content">
+
+    <h2 class="menu-dropdown__title arrow-pale">
+      Marketplace    </h2>
+
+          <p class="menu-dropdown__text">
+        Transform your business with data-driven, hyper-personalised financial services solutions      </p>
+        <div class="menu-dropdown__link d-none">
+      Read more    </div>
+
+  </div>
+</a>
+<a href="/releases/fintechos-22/" class="menu-dropdown__item">
+  <img width="200" height="197" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20197'%3E%3C/svg%3E" class="menu-dropdown__icon" alt="" data-lazy-src="https://fintechos.com/wp-content/uploads/2022/01/fintechos-22-200x197-1.png" /><noscript><img width="200" height="197" src="https://fintechos.com/wp-content/uploads/2022/01/fintechos-22-200x197-1.png" class="menu-dropdown__icon" alt="" /></noscript>  <div class="menu-dropdown__content">
+
+    <h2 class="menu-dropdown__title arrow-pale">
+      FintechOS 22    </h2>
+
+          <p class="menu-dropdown__text">
+        FintechOS 22 release overview: low-code platform for banking and insurance      </p>
+        <div class="menu-dropdown__link d-none">
+      Read more    </div>
+
+  </div>
+</a>        </div>
+                        <div class="menu-dropdown menu-dropdown--list" dropdown="1" data-menu="1">
+          
+<a href="/industry/retail-banking/" class="menu-dropdown__item">
+  <i class="ri-user-heart-fill" aria-hidden="true"></i>  <div class="menu-dropdown__content">
+
+    <h2 class="menu-dropdown__title arrow-pale">
+      Retail Banking    </h2>
+
+          <p class="menu-dropdown__text">
+        More personal, smarter, data-driven banking      </p>
+        <div class="menu-dropdown__link d-none">
+      Read more    </div>
+
+  </div>
+</a>
+<a href="/industry/sme-banking" class="menu-dropdown__item">
+  <i class="ri-shopping-cart-2-fill" aria-hidden="true"></i>  <div class="menu-dropdown__content">
+
+    <h2 class="menu-dropdown__title arrow-pale">
+      SME Banking    </h2>
+
+          <p class="menu-dropdown__text">
+        SME banking starts with understanding your market      </p>
+        <div class="menu-dropdown__link d-none">
+      Read more    </div>
+
+  </div>
+</a>
+<a href="/industry/general-insurance" class="menu-dropdown__item">
+  <i class="ri-home-4-fill" aria-hidden="true"></i>  <div class="menu-dropdown__content">
+
+    <h2 class="menu-dropdown__title arrow-pale">
+      General Insurance    </h2>
+
+          <p class="menu-dropdown__text">
+        Society is changing rapidly and so is the landscape for general insurance      </p>
+        <div class="menu-dropdown__link d-none">
+      Read more    </div>
+
+  </div>
+</a>
+<a href="/industry/life-insurance" class="menu-dropdown__item">
+  <i class="ri-team-fill" aria-hidden="true"></i>  <div class="menu-dropdown__content">
+
+    <h2 class="menu-dropdown__title arrow-pale">
+      Life Insurance    </h2>
+
+          <p class="menu-dropdown__text">
+        Become the insurer that understands its customers      </p>
+        <div class="menu-dropdown__link d-none">
+      Read more    </div>
+
+  </div>
+</a>
+<a href="/industry/health-insurance" class="menu-dropdown__item">
+  <i class="ri-health-book-fill" aria-hidden="true"></i>  <div class="menu-dropdown__content">
+
+    <h2 class="menu-dropdown__title arrow-pale">
+      Health Insurance    </h2>
+
+          <p class="menu-dropdown__text">
+        Insurers face the challenge of creating better health outcomes with higher efficiency      </p>
+        <div class="menu-dropdown__link d-none">
+      Read more    </div>
+
+  </div>
+</a>
+<a href="https://fintechos.com/demo/" class="menu-dropdown__item">
+  <i class="ri-file-info-fill" aria-hidden="true"></i>  <div class="menu-dropdown__content">
+
+    <h2 class="menu-dropdown__title arrow-pale">
+      Book a demo    </h2>
+
+        <div class="menu-dropdown__link d-none">
+      Read more    </div>
+
+  </div>
+</a>        </div>
+                        <div class="menu-dropdown menu-dropdown--list_highlight" dropdown="2" data-menu="2">
+          
+<a href="/partners/" class="menu-dropdown__item">
+  <i class="ri-heart-2-fill" aria-hidden="true"></i>  <div class="menu-dropdown__content">
+
+    <h2 class="menu-dropdown__title arrow-pale">
+      Partners    </h2>
+
+          <p class="menu-dropdown__text">
+        A highly capable partner-led strategy and network for predictable customer success outcomes      </p>
+        <div class="menu-dropdown__link d-none">
+      Read more    </div>
+
+  </div>
+</a>
+<a href="/customers/" class="menu-dropdown__item">
+  <i class="ri-user-3-fill" aria-hidden="true"></i>  <div class="menu-dropdown__content">
+
+    <h2 class="menu-dropdown__title arrow-pale">
+      Customers    </h2>
+
+          <p class="menu-dropdown__text">
+        Learn what more than 40+ global customers are saying about the value of FintechOS      </p>
+        <div class="menu-dropdown__link d-none">
+      Read more    </div>
+
+  </div>
+</a>
+<a href="/services-and-support/" class="menu-dropdown__item">
+  <i class="ri-customer-service-2-fill" aria-hidden="true"></i>  <div class="menu-dropdown__content">
+
+    <h2 class="menu-dropdown__title arrow-pale">
+      Services and Support    </h2>
+
+          <p class="menu-dropdown__text">
+        Our consultants have the skills required to develop, teach, support and lead teams      </p>
+        <div class="menu-dropdown__link d-none">
+      Read more    </div>
+
+  </div>
+</a>
+<a href="/academy/" class="menu-dropdown__item">
+  <i class="ri-book-open-fill" aria-hidden="true"></i>  <div class="menu-dropdown__content">
+
+    <h2 class="menu-dropdown__title arrow-pale">
+      Academy    </h2>
+
+          <p class="menu-dropdown__text">
+        We make it easy for you to identify the trainings and certifications for your role      </p>
+        <div class="menu-dropdown__link d-none">
+      Read more    </div>
+
+  </div>
+</a>
+<a class="menu-dropdown__item menu-dropdown__item--highlight" href="https://fintechos.com/whitepaper/low-code-innovation-for-financial-services-aite-group/">
+  <div class="d-flex align-middle flex-column">
+    <img width="294" height="283" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20294%20283'%3E%3C/svg%3E" class="menu-dropdown__image" alt="" data-lazy-src="https://fintechos.com/wp-content/uploads/2022/01/whitepaper-fintechos-low-code-innovation-financial-services-cover.png" /><noscript><img width="294" height="283" src="https://fintechos.com/wp-content/uploads/2022/01/whitepaper-fintechos-low-code-innovation-financial-services-cover.png" class="menu-dropdown__image" alt="" /></noscript>    <div class="d-flex justify-content-center">
+      <div class="btn btn--md btn--secondary-outline mt-sm text-center">
+        Read the report      </div>
+    </div>
+  </div>
+</a>
+        </div>
+                        <div class="menu-dropdown menu-dropdown--list" dropdown="3" data-menu="3">
+          
+<a href="https://fintechos.com/insights/" class="menu-dropdown__item">
+  <i class="ri-bar-chart-fill" aria-hidden="true"></i>  <div class="menu-dropdown__content">
+
+    <h2 class="menu-dropdown__title arrow-pale">
+      Insights    </h2>
+
+          <p class="menu-dropdown__text">
+        Keeping you informed on the latest trends and tech that is shaking the banking and insurance services      </p>
+        <div class="menu-dropdown__link d-none">
+      Read more    </div>
+
+  </div>
+</a>
+<a href="https://fintechos.com/webinars/" class="menu-dropdown__item">
+  <i class="ri-video-fill" aria-hidden="true"></i>  <div class="menu-dropdown__content">
+
+    <h2 class="menu-dropdown__title arrow-pale">
+      Webinars    </h2>
+
+          <p class="menu-dropdown__text">
+        Check out our upcoming webinars and our past, on-demand video content      </p>
+        <div class="menu-dropdown__link d-none">
+      Read more    </div>
+
+  </div>
+</a>
+<a href="https://fintechos.com/blog/" class="menu-dropdown__item">
+  <i class="ri-computer-fill" aria-hidden="true"></i>  <div class="menu-dropdown__content">
+
+    <h2 class="menu-dropdown__title arrow-pale">
+      Blog    </h2>
+
+          <p class="menu-dropdown__text">
+        Community news, leadership series, interesting topics in financial technology and everything in between      </p>
+        <div class="menu-dropdown__link d-none">
+      Read more    </div>
+
+  </div>
+</a>
+<a href="https://fintechos.com/whitepapers/" class="menu-dropdown__item">
+  <i class="ri-article-fill" aria-hidden="true"></i>  <div class="menu-dropdown__content">
+
+    <h2 class="menu-dropdown__title arrow-pale">
+      Whitepapers    </h2>
+
+          <p class="menu-dropdown__text">
+        Take a deep dive into the latest trends in banking and insurance      </p>
+        <div class="menu-dropdown__link d-none">
+      Read more    </div>
+
+  </div>
+</a>
+<a href="https://fintechos.com/case-studies/" class="menu-dropdown__item">
+  <i class="ri-file-search-fill" aria-hidden="true"></i>  <div class="menu-dropdown__content">
+
+    <h2 class="menu-dropdown__title arrow-pale">
+      Case studies    </h2>
+
+          <p class="menu-dropdown__text">
+        Get to know some of our customers and see how they’re using FintechOS to build personalized digital journeys      </p>
+        <div class="menu-dropdown__link d-none">
+      Read more    </div>
+
+  </div>
+</a>
+<a href="https://fintechos.com/newsroom/" class="menu-dropdown__item">
+  <i class="ri-newspaper-fill" aria-hidden="true"></i>  <div class="menu-dropdown__content">
+
+    <h2 class="menu-dropdown__title arrow-pale">
+      Newsroom    </h2>
+
+          <p class="menu-dropdown__text">
+        Stay up to date with our latest news and where we are in the media      </p>
+        <div class="menu-dropdown__link d-none">
+      Read more    </div>
+
+  </div>
+</a>
+<a href="https://fintechos.com/events/" class="menu-dropdown__item">
+  <i class="ri-newspaper-fill" aria-hidden="true"></i>  <div class="menu-dropdown__content">
+
+    <h2 class="menu-dropdown__title arrow-pale">
+      Events    </h2>
+
+          <p class="menu-dropdown__text">
+        Check out our upcoming events      </p>
+        <div class="menu-dropdown__link d-none">
+      Read more    </div>
+
+  </div>
+</a>
+<a href="/newsletters/" class="menu-dropdown__item">
+  <i class="ri-article-fill" aria-hidden="true"></i>  <div class="menu-dropdown__content">
+
+    <h2 class="menu-dropdown__title arrow-pale">
+      Newsletters    </h2>
+
+          <p class="menu-dropdown__text">
+        Our banking & insurance newsletters      </p>
+        <div class="menu-dropdown__link d-none">
+      Read more    </div>
+
+  </div>
+</a>        </div>
+                        <div class="menu-dropdown menu-dropdown--contact" dropdown="4" data-menu="4">
+          
+<div class="menu-dropdown__item menu-dropdown__item--list">
+  <img width="512" height="512" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20512%20512'%3E%3C/svg%3E" class="menu-dropdown__logo" alt="" data-lazy-srcset="https://fintechos.com/wp-content/uploads/2022/01/cropped-Group.png 512w, https://fintechos.com/wp-content/uploads/2022/01/cropped-Group-300x300.png 300w, https://fintechos.com/wp-content/uploads/2022/01/cropped-Group-150x150.png 150w" data-lazy-sizes="(max-width: 512px) 100vw, 512px" data-lazy-src="https://fintechos.com/wp-content/uploads/2022/01/cropped-Group.png" /><noscript><img width="512" height="512" src="https://fintechos.com/wp-content/uploads/2022/01/cropped-Group.png" class="menu-dropdown__logo" alt="" srcset="https://fintechos.com/wp-content/uploads/2022/01/cropped-Group.png 512w, https://fintechos.com/wp-content/uploads/2022/01/cropped-Group-300x300.png 300w, https://fintechos.com/wp-content/uploads/2022/01/cropped-Group-150x150.png 150w" sizes="(max-width: 512px) 100vw, 512px" /></noscript>  <div>
+    <a href="https://fintechos.com/about-us/">
+      <h2 class="menu-dropdown__title menu-dropdown__title--big">
+        About us      </h2>
+    </a>
+                  <a class="menu-dropdown__list-link" href="https://fintechos.com/about-us/">
+          About us        </a>
+            </div>
+</div>
+<div class="menu-dropdown__item menu-dropdown__item--list">
+  <img width="37" height="37" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2037%2037'%3E%3C/svg%3E" class="menu-dropdown__logo" alt="" data-lazy-src="https://fintechos.com/wp-content/uploads/2022/01/inside-fintechOS-1.svg" /><noscript><img width="37" height="37" src="https://fintechos.com/wp-content/uploads/2022/01/inside-fintechOS-1.svg" class="menu-dropdown__logo" alt="" /></noscript>  <div>
+    <a href="https://inside.fintechos.com">
+      <h2 class="menu-dropdown__title menu-dropdown__title--big">
+        Inside FintechOS      </h2>
+    </a>
+                  <a class="menu-dropdown__list-link" href="https://inside.fintechos.com">
+          Inside FintechOS        </a>
+            </div>
+</div>
+<a class="menu-dropdown__item menu-dropdown__item--highlight" href="https://fintechos.com/download-fintechos-corporate-brochure/">
+  <div class="d-flex align-middle flex-column">
+    <img width="556" height="402" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20556%20402'%3E%3C/svg%3E" class="menu-dropdown__image menu-dropdown__image--small" alt="" data-lazy-srcset="https://fintechos.com/wp-content/uploads/2022/01/Corporate-Brochure.png 556w, https://fintechos.com/wp-content/uploads/2022/01/Corporate-Brochure-300x217.png 300w" data-lazy-sizes="(max-width: 556px) 100vw, 556px" data-lazy-src="https://fintechos.com/wp-content/uploads/2022/01/Corporate-Brochure.png" /><noscript><img width="556" height="402" src="https://fintechos.com/wp-content/uploads/2022/01/Corporate-Brochure.png" class="menu-dropdown__image menu-dropdown__image--small" alt="" srcset="https://fintechos.com/wp-content/uploads/2022/01/Corporate-Brochure.png 556w, https://fintechos.com/wp-content/uploads/2022/01/Corporate-Brochure-300x217.png 300w" sizes="(max-width: 556px) 100vw, 556px" /></noscript>    <div class="d-flex justify-content-center">
+      <div class="btn btn--md btn--secondary-outline mt-sm text-center">
+        Read more about us      </div>
+    </div>
+  </div>
+</a>
+        </div>
+                      </div>
+</div>
+</header>
+<main class="body">
+<section class="section page-banner-animation">
+  <div class="container">
+    <div class="page-banner-animation__inner page-banner-animation__inner--blue">
+      <div class="row">
+
+        <div class="col-12 col-md-6 col-lg-7">
+          <h1 class="page-banner-animation__title page-banner-animation__title--big">Build innovative financial services fast</h1>
+
+          
+                      <div class="page-banner-animation__content">
+              <p>The FintechOS platform empowers any organization to create innovative financial products that meet changing consumer needs.</p>
+            </div>
+          
+          <a href="/demo" title="Book a demo" target="" class="btn page-banner-animation__button btn--pink">Book a demo</a>        </div>
+
+        <div class="col-8 offset-2 col-md-6 col-lg-3 offset-lg-1 p-lg-0">
+          
+            <div class="page-banner-animation__player">
+              
+<lottie-player src="https://fintechos.com/wp-content/uploads/2022/04/FintechOS-header-animation.json" background="transparent" speed="1" style="height: 100%; width: 100%;" loop="1" autoplay="1"></lottie-player>            </div>
+
+                  </div>
+
+        <div class="offset-lg-1"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+  <section class="section logos">
+    <div class="container">
+      
+        
+        <div class="row justify-content-center">
+          <div class="col-12">
+            <div class="logo-grid">
+                              <div class="logo-grid__item">
+                  <img width="132" height="28" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20132%2028'%3E%3C/svg%3E" class="logo-grid__logo " alt="" data-lazy-src="https://fintechos.com/wp-content/uploads/2022/04/Société_Générale-1.png" /><noscript><img width="132" height="28" src="https://fintechos.com/wp-content/uploads/2022/04/Société_Générale-1.png" class="logo-grid__logo " alt="" /></noscript>                </div>
+                              <div class="logo-grid__item">
+                  <img width="252" height="48" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20252%2048'%3E%3C/svg%3E" class="logo-grid__logo " alt="" data-lazy-src="https://fintechos.com/wp-content/uploads/2022/04/image-150.png" /><noscript><img width="252" height="48" src="https://fintechos.com/wp-content/uploads/2022/04/image-150.png" class="logo-grid__logo " alt="" /></noscript>                </div>
+                              <div class="logo-grid__item">
+                  <img width="152" height="22" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20152%2022'%3E%3C/svg%3E" class="logo-grid__logo " alt="" data-lazy-srcset="https://fintechos.com/wp-content/uploads/2022/04/image-154.png 152w, https://fintechos.com/wp-content/uploads/2022/04/image-154-150x22.png 150w" data-lazy-sizes="(max-width: 152px) 100vw, 152px" data-lazy-src="https://fintechos.com/wp-content/uploads/2022/04/image-154.png" /><noscript><img width="152" height="22" src="https://fintechos.com/wp-content/uploads/2022/04/image-154.png" class="logo-grid__logo " alt="" srcset="https://fintechos.com/wp-content/uploads/2022/04/image-154.png 152w, https://fintechos.com/wp-content/uploads/2022/04/image-154-150x22.png 150w" sizes="(max-width: 152px) 100vw, 152px" /></noscript>                </div>
+                              <div class="logo-grid__item">
+                  <img width="881" height="161" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20881%20161'%3E%3C/svg%3E" class="logo-grid__logo " alt="" data-lazy-srcset="https://fintechos.com/wp-content/uploads/2022/04/Howden.png 881w, https://fintechos.com/wp-content/uploads/2022/04/Howden-300x55.png 300w, https://fintechos.com/wp-content/uploads/2022/04/Howden-768x140.png 768w" data-lazy-sizes="(max-width: 881px) 100vw, 881px" data-lazy-src="https://fintechos.com/wp-content/uploads/2022/04/Howden.png" /><noscript><img width="881" height="161" src="https://fintechos.com/wp-content/uploads/2022/04/Howden.png" class="logo-grid__logo " alt="" srcset="https://fintechos.com/wp-content/uploads/2022/04/Howden.png 881w, https://fintechos.com/wp-content/uploads/2022/04/Howden-300x55.png 300w, https://fintechos.com/wp-content/uploads/2022/04/Howden-768x140.png 768w" sizes="(max-width: 881px) 100vw, 881px" /></noscript>                </div>
+                              <div class="logo-grid__item">
+                  <img width="131" height="43" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20131%2043'%3E%3C/svg%3E" class="logo-grid__logo " alt="" data-lazy-src="https://fintechos.com/wp-content/uploads/2022/04/Oney_Logo.png" /><noscript><img width="131" height="43" src="https://fintechos.com/wp-content/uploads/2022/04/Oney_Logo.png" class="logo-grid__logo " alt="" /></noscript>                </div>
+                              <div class="logo-grid__item">
+                  <img width="617" height="289" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20617%20289'%3E%3C/svg%3E" class="logo-grid__logo " alt="" data-lazy-srcset="https://fintechos.com/wp-content/uploads/2022/04/vodafone-group-logo-vector-1.png 617w, https://fintechos.com/wp-content/uploads/2022/04/vodafone-group-logo-vector-1-300x141.png 300w" data-lazy-sizes="(max-width: 617px) 100vw, 617px" data-lazy-src="https://fintechos.com/wp-content/uploads/2022/04/vodafone-group-logo-vector-1.png" /><noscript><img width="617" height="289" src="https://fintechos.com/wp-content/uploads/2022/04/vodafone-group-logo-vector-1.png" class="logo-grid__logo " alt="" srcset="https://fintechos.com/wp-content/uploads/2022/04/vodafone-group-logo-vector-1.png 617w, https://fintechos.com/wp-content/uploads/2022/04/vodafone-group-logo-vector-1-300x141.png 300w" sizes="(max-width: 617px) 100vw, 617px" /></noscript>                </div>
+                              <div class="logo-grid__item">
+                  <img width="104" height="30" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20104%2030'%3E%3C/svg%3E" class="logo-grid__logo " alt="" data-lazy-src="https://fintechos.com/wp-content/uploads/2022/04/Erste_Bank_Logo-1.png" /><noscript><img width="104" height="30" src="https://fintechos.com/wp-content/uploads/2022/04/Erste_Bank_Logo-1.png" class="logo-grid__logo " alt="" /></noscript>                </div>
+                              <div class="logo-grid__item">
+                  <img width="115" height="38" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20115%2038'%3E%3C/svg%3E" class="logo-grid__logo " alt="" data-lazy-src="https://fintechos.com/wp-content/uploads/2022/04/Frame.png" /><noscript><img width="115" height="38" src="https://fintechos.com/wp-content/uploads/2022/04/Frame.png" class="logo-grid__logo " alt="" /></noscript>                </div>
+                              <div class="logo-grid__item">
+                  <img width="107" height="47" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20107%2047'%3E%3C/svg%3E" class="logo-grid__logo " alt="" data-lazy-src="https://fintechos.com/wp-content/uploads/2022/04/Vienna_Insurance_Group_Logo-1.png" /><noscript><img width="107" height="47" src="https://fintechos.com/wp-content/uploads/2022/04/Vienna_Insurance_Group_Logo-1.png" class="logo-grid__logo " alt="" /></noscript>                </div>
+                              <div class="logo-grid__item">
+                  <img width="112" height="30" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20112%2030'%3E%3C/svg%3E" class="logo-grid__logo " alt="" data-lazy-src="https://fintechos.com/wp-content/uploads/2022/05/Vector-5.svg" /><noscript><img width="112" height="30" src="https://fintechos.com/wp-content/uploads/2022/05/Vector-5.svg" class="logo-grid__logo " alt="" /></noscript>                </div>
+              
+              
+            </div>
+
+                      </div>
+        </div>
+
+            </div>
+
+  </section>
+
+
+
+
+<section class="section text-columns-image mb-none pb-lg">
+      <svg version="1.1" class="cut cut--bottom cut--primary" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/" x="0px" y="0px" viewBox="0 0 1440 100" style="enable-background:new 0 0 1440 100;" xml:space="preserve" preserveAspectRatio="none">
+    <polygon class="cut__shape" points="0,100 0,100 1440,100 1440,0" />
+  </svg>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h2 class="subtitle green-title__subtitle">Fully integrated fintech infrastructure</h2>                <p >We bring together everything needed to build next-generation financial services that are digital-first, automated, and customer-centric. FintechOS supports rapid innovation in lending, savings, mortgages, insurance, BNPL and embedded finance.</p>            </div>
+        </div>
+
+        
+        <div class="row justify-content-center">
+            <img width="1024" height="822" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201024%20822'%3E%3C/svg%3E" class="text-columns-image__image" alt="" data-lazy-srcset="https://fintechos.com/wp-content/uploads/2022/04/fully-integrated-fintech-infrastructure-e1649921759484-1024x822.png 1024w, https://fintechos.com/wp-content/uploads/2022/04/fully-integrated-fintech-infrastructure-e1649921759484-300x241.png 300w, https://fintechos.com/wp-content/uploads/2022/04/fully-integrated-fintech-infrastructure-e1649921759484-768x616.png 768w, https://fintechos.com/wp-content/uploads/2022/04/fully-integrated-fintech-infrastructure-e1649921759484-1536x1232.png 1536w, https://fintechos.com/wp-content/uploads/2022/04/fully-integrated-fintech-infrastructure-e1649921759484-2048x1643.png 2048w" data-lazy-sizes="(max-width: 1024px) 100vw, 1024px" data-lazy-src="https://fintechos.com/wp-content/uploads/2022/04/fully-integrated-fintech-infrastructure-e1649921759484-1024x822.png" /><noscript><img width="1024" height="822" src="https://fintechos.com/wp-content/uploads/2022/04/fully-integrated-fintech-infrastructure-e1649921759484-1024x822.png" class="text-columns-image__image" alt="" srcset="https://fintechos.com/wp-content/uploads/2022/04/fully-integrated-fintech-infrastructure-e1649921759484-1024x822.png 1024w, https://fintechos.com/wp-content/uploads/2022/04/fully-integrated-fintech-infrastructure-e1649921759484-300x241.png 300w, https://fintechos.com/wp-content/uploads/2022/04/fully-integrated-fintech-infrastructure-e1649921759484-768x616.png 768w, https://fintechos.com/wp-content/uploads/2022/04/fully-integrated-fintech-infrastructure-e1649921759484-1536x1232.png 1536w, https://fintechos.com/wp-content/uploads/2022/04/fully-integrated-fintech-infrastructure-e1649921759484-2048x1643.png 2048w" sizes="(max-width: 1024px) 100vw, 1024px" /></noscript><img width="393" height="565" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20393%20565'%3E%3C/svg%3E" class="text-columns-image__image-small" alt="" data-lazy-srcset="https://fintechos.com/wp-content/uploads/2022/03/mobile_screens.png 393w, https://fintechos.com/wp-content/uploads/2022/03/mobile_screens-209x300.png 209w" data-lazy-sizes="(max-width: 393px) 100vw, 393px" data-lazy-src="https://fintechos.com/wp-content/uploads/2022/03/mobile_screens.png" /><noscript><img width="393" height="565" src="https://fintechos.com/wp-content/uploads/2022/03/mobile_screens.png" class="text-columns-image__image-small" alt="" srcset="https://fintechos.com/wp-content/uploads/2022/03/mobile_screens.png 393w, https://fintechos.com/wp-content/uploads/2022/03/mobile_screens-209x300.png 209w" sizes="(max-width: 393px) 100vw, 393px" /></noscript>        </div>
+    </div>
+    </div>
+</section>
+
+
+
+<section class="section text-repeater-image overflow-hidden background-primary pb-sm">
+
+        <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <div class="text-repeater-image__content text-repeater-image__content--top">
+                    <h2 class="subtitle green-title__subtitle">Free your digital makers</h2>
+                    <p>With our no-code/low-code Innovation Studio, small non-technical teams can bring products from concept to market and measure their impact.</p>
+<a href="/innovation-studio/" title="More about Innovation studio" target="" class="btn text-repeater-image__button text-repeater-image__button--reversed btn--pink">More about Innovation studio</a>                </div>
+
+                
+                    <div class="row">
+                        
+                            <div class="col-12 col-md-6">
+                                <div class="text-repeater-image__content text-repeater-image__content--bottom">
+                                    <img width="1" height="1" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201%201'%3E%3C/svg%3E" class="text-repeater-image__icon" alt="" data-lazy-src="https://fintechos.com/wp-content/uploads/2022/06/Vector-3.svg" /><noscript><img width="1" height="1" src="https://fintechos.com/wp-content/uploads/2022/06/Vector-3.svg" class="text-repeater-image__icon" alt="" /></noscript>
+                                                                            <h3 class="text-repeater-image__small-title h4 text-repeater-image__small-title--normal">Build innovative <strong>products and services</strong></h3>
+                                    
+                                                                    </div>
+                            </div>
+
+                        
+                            <div class="col-12 col-md-6">
+                                <div class="text-repeater-image__content text-repeater-image__content--bottom">
+                                    <img width="1" height="1" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201%201'%3E%3C/svg%3E" class="text-repeater-image__icon" alt="" data-lazy-src="https://fintechos.com/wp-content/uploads/2022/06/Group-3465732-1.svg" /><noscript><img width="1" height="1" src="https://fintechos.com/wp-content/uploads/2022/06/Group-3465732-1.svg" class="text-repeater-image__icon" alt="" /></noscript>
+                                                                            <h3 class="text-repeater-image__small-title h4 text-repeater-image__small-title--normal">Create personalized <strong>customer journeys</strong></h3>
+                                    
+                                                                    </div>
+                            </div>
+
+                        
+                            <div class="col-12 col-md-6">
+                                <div class="text-repeater-image__content text-repeater-image__content--bottom">
+                                    <img width="1" height="1" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201%201'%3E%3C/svg%3E" class="text-repeater-image__icon" alt="" data-lazy-src="https://fintechos.com/wp-content/uploads/2022/06/Vector-2-1.svg" /><noscript><img width="1" height="1" src="https://fintechos.com/wp-content/uploads/2022/06/Vector-2-1.svg" class="text-repeater-image__icon" alt="" /></noscript>
+                                                                            <h3 class="text-repeater-image__small-title h4 text-repeater-image__small-title--normal">Leverage a <strong>data at the core</strong> architecture</h3>
+                                    
+                                                                    </div>
+                            </div>
+
+                        
+                            <div class="col-12 col-md-6">
+                                <div class="text-repeater-image__content text-repeater-image__content--bottom">
+                                    <img width="1" height="1" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201%201'%3E%3C/svg%3E" class="text-repeater-image__icon" alt="" data-lazy-src="https://fintechos.com/wp-content/uploads/2022/06/Vector-1-1.svg" /><noscript><img width="1" height="1" src="https://fintechos.com/wp-content/uploads/2022/06/Vector-1-1.svg" class="text-repeater-image__icon" alt="" /></noscript>
+                                                                            <h3 class="text-repeater-image__small-title h4 text-repeater-image__small-title--normal">Surface ecosystem <strong>innovation</strong></h3>
+                                    
+                                                                    </div>
+                            </div>
+
+                                            </div>
+
+                
+                <a href="/innovation-studio/" title="More about Innovation studio" target="" class="btn text-repeater-image__button text-repeater-image__button--reversed btn--pink">More about Innovation studio</a>            </div>
+
+        </div>
+    </div>
+
+            <div class="text-repeater-image__image-wrap text-repeater-image__image-contain">
+            <img width="1010" height="1024" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201010%201024'%3E%3C/svg%3E" class="text-repeater-image__image" alt="" data-lazy-srcset="https://fintechos.com/wp-content/uploads/2022/03/designed-1010x1024.png 1010w, https://fintechos.com/wp-content/uploads/2022/03/designed-296x300.png 296w, https://fintechos.com/wp-content/uploads/2022/03/designed-768x779.png 768w, https://fintechos.com/wp-content/uploads/2022/03/designed-1515x1536.png 1515w, https://fintechos.com/wp-content/uploads/2022/03/designed.png 1533w" data-lazy-sizes="(max-width: 1010px) 100vw, 1010px" data-lazy-src="https://fintechos.com/wp-content/uploads/2022/03/designed-1010x1024.png" /><noscript><img width="1010" height="1024" src="https://fintechos.com/wp-content/uploads/2022/03/designed-1010x1024.png" class="text-repeater-image__image" alt="" srcset="https://fintechos.com/wp-content/uploads/2022/03/designed-1010x1024.png 1010w, https://fintechos.com/wp-content/uploads/2022/03/designed-296x300.png 296w, https://fintechos.com/wp-content/uploads/2022/03/designed-768x779.png 768w, https://fintechos.com/wp-content/uploads/2022/03/designed-1515x1536.png 1515w, https://fintechos.com/wp-content/uploads/2022/03/designed.png 1533w" sizes="(max-width: 1010px) 100vw, 1010px" /></noscript>        </div>
+    </section>
+
+
+
+<section class="section year-infograph background-zircon pt-xl pb-xl">
+
+    <svg version="1.1" class="cut cut--top cut--primary" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/" x="0px" y="0px" viewBox="0 0 1440 100" style="enable-background:new 0 0 1440 100;" xml:space="preserve" preserveAspectRatio="none">
+    <polygon class="cut__shape" points="1440,0 1440,0 0,0 0,100" />
+  </svg>
+  <svg version="1.1" class="cut cut--bottom cut--white" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/" x="0px" y="0px" viewBox="0 0 1440 100" style="enable-background:new 0 0 1440 100;" xml:space="preserve" preserveAspectRatio="none">
+    <polygon class="cut__shape" points="0,100 0,100 1440,100 1440,0" />
+  </svg>
+  <div class="container">
+    <div class="year-infograp__inner">
+      <div class="year-infograph__top">
+        <div class="row">
+          <div class="col-12 col-lg-5">
+            <h2 class="subtitle green-title__subtitle">Become an innovation powerhouse</h2>
+            <p>Expand your existing portfolio, and continue to grow into new markets, while keeping up with ever-changing compliance and regulatory requirements</p>
+            <div class="d-none d-md-block">
+                              <p class="color-sample color-sample--blue">
+                  Retail Products                </p>
+              
+                              <p class="color-sample color-sample--light-blue">
+                  Business Products                </p>
+              
+                              <p class="color-sample color-sample--light-blue-blue">
+                  Serves both customer segments                </p>
+              
+                              <p class="color-sample color-sample--yellow">
+                  Partner Products                </p>
+              
+                              <p class="color-sample color-sample--pink">
+                  Others                </p>
+                          </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="timeframe">
+          <div class="dates">
+                          <div class="dates__date active" data-tab="0">2022</div>
+
+                          <div class="dates__date" data-tab="1">2023</div>
+
+                          <div class="dates__date" data-tab="2">2024</div>
+
+                          <div class="dates__date" data-tab="3">2025</div>
+
+                          <div class="dates__date" data-tab="4">2026</div>
+
+                          <div class="dates__date" data-tab="5">2027</div>
+
+                      </div>
+          <div class="timeframe__inner">
+            <div class="overflow-hidden">
+              <div class="timeframe__years">
+                                  <div class="timeframe__year" data-tab="0">
+                    <p class="timeframe__date">2022</p>
+
+                                          <div class="timeframe__item timeframe__item--blue">
+                        Credit Card                      </div>
+                                          <div class="timeframe__item timeframe__item--blue">
+                        Current account                      </div>
+                                      </div>
+                                  <div class="timeframe__year" data-tab="1">
+                    <p class="timeframe__date">2023</p>
+
+                                          <div class="timeframe__item timeframe__item--blue">
+                        Credit Card                      </div>
+                                          <div class="timeframe__item timeframe__item--blue">
+                        Current account                      </div>
+                                          <div class="timeframe__item timeframe__item--blue">
+                        Personal Loan                      </div>
+                                          <div class="timeframe__item timeframe__item--light-blue">
+                        SME Loan                      </div>
+                                      </div>
+                                  <div class="timeframe__year" data-tab="2">
+                    <p class="timeframe__date">2024</p>
+
+                                          <div class="timeframe__item timeframe__item--blue">
+                        Credit Card                      </div>
+                                          <div class="timeframe__item timeframe__item--blue">
+                        Current account                      </div>
+                                          <div class="timeframe__item timeframe__item--blue">
+                        Personal Loan                      </div>
+                                          <div class="timeframe__item timeframe__item--light-blue">
+                        SME Loan                      </div>
+                                          <div class="timeframe__item timeframe__item--blue">
+                        Mortgage                      </div>
+                                          <div class="timeframe__item timeframe__item--blue">
+                        Home Insurance                      </div>
+                                          <div class="timeframe__item timeframe__item--yellow">
+                        Travel insurance                      </div>
+                                      </div>
+                                  <div class="timeframe__year" data-tab="3">
+                    <p class="timeframe__date">2025</p>
+
+                                          <div class="timeframe__item timeframe__item--blue">
+                        Credit Card                      </div>
+                                          <div class="timeframe__item timeframe__item--blue">
+                        Current account                      </div>
+                                          <div class="timeframe__item timeframe__item--blue">
+                        Personal Loan                      </div>
+                                          <div class="timeframe__item timeframe__item--light-blue">
+                        SME Loan                      </div>
+                                          <div class="timeframe__item timeframe__item--blue">
+                        Mortgage                      </div>
+                                          <div class="timeframe__item timeframe__item--blue">
+                        Home Insurance                      </div>
+                                          <div class="timeframe__item timeframe__item--yellow">
+                        Travel insurance                      </div>
+                                          <div class="timeframe__item timeframe__item--yellow">
+                        Health Insurance                      </div>
+                                          <div class="timeframe__item timeframe__item--blue">
+                        Life Insurance                      </div>
+                                          <div class="timeframe__item timeframe__item--blue">
+                        Deposits                      </div>
+                                          <div class="timeframe__item timeframe__item--pink">
+                        Open API                      </div>
+                                          <div class="timeframe__item timeframe__item--yellow">
+                        Embedded Finance                      </div>
+                                      </div>
+                                  <div class="timeframe__year" data-tab="4">
+                    <p class="timeframe__date">2026</p>
+
+                                          <div class="timeframe__item timeframe__item--blue">
+                        Credit Card                      </div>
+                                          <div class="timeframe__item timeframe__item--blue">
+                        Current account                      </div>
+                                          <div class="timeframe__item timeframe__item--blue">
+                        Personal Loan                      </div>
+                                          <div class="timeframe__item timeframe__item--light-blue">
+                        SME Loan                      </div>
+                                          <div class="timeframe__item timeframe__item--blue">
+                        Mortgage                      </div>
+                                          <div class="timeframe__item timeframe__item--blue">
+                        Home Insurance                      </div>
+                                          <div class="timeframe__item timeframe__item--yellow">
+                        Travel insurance                      </div>
+                                          <div class="timeframe__item timeframe__item--yellow">
+                        Health Insurance                      </div>
+                                          <div class="timeframe__item timeframe__item--blue">
+                        Life Insurance                      </div>
+                                          <div class="timeframe__item timeframe__item--blue">
+                        Deposits                      </div>
+                                          <div class="timeframe__item timeframe__item--pink">
+                        Open API                      </div>
+                                          <div class="timeframe__item timeframe__item--yellow">
+                        Embedded Finance                      </div>
+                                          <div class="timeframe__item timeframe__item--yellow">
+                        Real Estate Options                      </div>
+                                          <div class="timeframe__item timeframe__item--light-blue">
+                        Proprietary App Store                      </div>
+                                          <div class="timeframe__item timeframe__item--blue">
+                        Buy Now, Pay Later                      </div>
+                                          <div class="timeframe__item timeframe__item--blue">
+                        Split Payments                      </div>
+                                      </div>
+                                  <div class="timeframe__year" data-tab="5">
+                    <p class="timeframe__date">2027</p>
+
+                                          <div class="timeframe__item timeframe__item--blue">
+                        Credit Card                      </div>
+                                          <div class="timeframe__item timeframe__item--blue">
+                        Current account                      </div>
+                                          <div class="timeframe__item timeframe__item--blue">
+                        Personal Loan                      </div>
+                                          <div class="timeframe__item timeframe__item--light-blue">
+                        SME Loan                      </div>
+                                          <div class="timeframe__item timeframe__item--blue">
+                        Mortgage                      </div>
+                                          <div class="timeframe__item timeframe__item--blue">
+                        Home Insurance                      </div>
+                                          <div class="timeframe__item timeframe__item--yellow">
+                        Travel insurance                      </div>
+                                          <div class="timeframe__item timeframe__item--yellow">
+                        Health Insurance                      </div>
+                                          <div class="timeframe__item timeframe__item--blue">
+                        Life Insurance                      </div>
+                                          <div class="timeframe__item timeframe__item--blue">
+                        Deposits                      </div>
+                                          <div class="timeframe__item timeframe__item--pink">
+                        Open API                      </div>
+                                          <div class="timeframe__item timeframe__item--yellow">
+                        Embedded Finance                      </div>
+                                          <div class="timeframe__item timeframe__item--yellow">
+                        Real Estate Options                      </div>
+                                          <div class="timeframe__item timeframe__item--light-blue">
+                        Proprietary App Store                      </div>
+                                          <div class="timeframe__item timeframe__item--blue">
+                        Buy Now, Pay Later                      </div>
+                                          <div class="timeframe__item timeframe__item--blue">
+                        Split Payments                      </div>
+                                          <div class="timeframe__item timeframe__item--blue">
+                        Rewards                      </div>
+                                          <div class="timeframe__item timeframe__item--light-blue-blue">
+                        Investments                      </div>
+                                          <div class="timeframe__item timeframe__item--yellow">
+                        Travel Services                      </div>
+                                          <div class="timeframe__item timeframe__item--blue">
+                        Gamification                      </div>
+                                          <div class="timeframe__item timeframe__item--blue">
+                        Cryptocurrencies                      </div>
+                                      </div>
+                              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="d-md-none mt-3 mt-lg-5">
+              <p class="color-sample color-sample--blue">
+          Retail Products        </p>
+      
+              <p class="color-sample color-sample--light-blue">
+          Business Products        </p>
+      
+              <p class="color-sample color-sample--light-blue-blue">
+          Serves both customer segments        </p>
+      
+              <p class="color-sample color-sample--yellow">
+          Partner Products        </p>
+      
+              <p class="color-sample color-sample--pink">
+          Others        </p>
+          </div>
+
+          <div class="step-grid my-3">
+                  <div class="time-step card card--br-sm">
+                          <div class="time-step__icon">
+                <i class="ri-apps-fill" aria-hidden="true"></i>              </div>
+            
+            <div>
+              Build an increasing portfolio of products that <strong>differentiate</strong> you <strong>from competitors</strong>            </div>
+          </div>
+                  <div class="time-step card card--br-sm">
+                          <div class="time-step__icon">
+                <i class="ri-funds-fill" aria-hidden="true"></i>              </div>
+            
+            <div>
+              <strong>Increase share of wallet</strong> by rapidly expanding into new markets            </div>
+          </div>
+                  <div class="time-step card card--br-sm">
+                          <div class="time-step__icon">
+                <i class="ri-tools-fill" aria-hidden="true"></i>              </div>
+            
+            <div>
+              Continuously refine products and <strong>improve operational efficiency</strong>            </div>
+          </div>
+              </div>
+
+    
+          <a class="btn btn--pink" href="/demo" target="">
+        Book a demo      </a>
+      </div>
+</section>
+
+
+
+<section class="section slider-content">
+
+    
+    <div class="container">
+
+        <h2 >What our clients have to say about us</h2>
+                    <div class="slider">
+                <div class="swiper-container slider__swiper slider-content__slider" data-swiper="%7B%22slidesPerView%22%3A1%2C%22loop%22%3Atrue%7D">
+                    <div class="swiper-wrapper">
+
+                                                    <div class="swiper-slide slider-content__slide">
+                                <div class="row">
+                                    <div class="col-md-4 col-12">
+
+                                        <div class="slider-content__logo-wrapper">
+                                            <img width="132" height="28" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20132%2028'%3E%3C/svg%3E" class="slider-content__logo" alt="" data-lazy-src="https://fintechos.com/wp-content/uploads/2022/04/Société_Générale-1.png" /><noscript><img width="132" height="28" src="https://fintechos.com/wp-content/uploads/2022/04/Société_Générale-1.png" class="slider-content__logo" alt="" /></noscript>                                            <i class="fal fa-long-arrow-left slider__button--prev slider-content__prev slider-content__prev--desktop"></i>
+                                            <i class="fal fa-long-arrow-right slider__button--next slider-content__next slider-content__next--desktop"></i>
+                                        </div>
+
+                                        <div class="slider-content__line"></div>
+
+                                        <p><strong>80%</strong> reduction in onboarding time<br />
+<strong>30%</strong> lower customer acquisition cost<br />
+<strong>95%</strong> customer satisfaction rate</p>
+                                    </div>
+
+                                    <div class="col-md-8 col-12 slider-content__column">
+
+                                        <div class="slider-content__quote">
+                                            <p>“We chose FintechOS because we wanted someone who had a good track record of delivering onboarding and online lending solutions”</p>
+                                        </div>
+
+                                        <div class="slider-content__wrapper">
+                                            <div class="slider-content__person">
+                                                <img width="51" height="51" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2051%2051'%3E%3C/svg%3E" class="attachment-thumbnail size-thumbnail" alt="" data-lazy-src="https://fintechos.com/wp-content/uploads/2022/06/Ellipse-41-2.png" /><noscript><img width="51" height="51" src="https://fintechos.com/wp-content/uploads/2022/06/Ellipse-41-2.png" class="attachment-thumbnail size-thumbnail" alt="" /></noscript><p class="p1"><span class="s1"><b>Maia Mikic<br />
+</b>Executive Director for<br />
+Digital Transformation at BRD<b><br />
+</b></span></p>
+                                            </div>
+                                                                                    </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                                                    <div class="swiper-slide slider-content__slide">
+                                <div class="row">
+                                    <div class="col-md-4 col-12">
+
+                                        <div class="slider-content__logo-wrapper">
+                                            <img width="881" height="161" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20881%20161'%3E%3C/svg%3E" class="slider-content__logo" alt="" data-lazy-srcset="https://fintechos.com/wp-content/uploads/2022/04/Howden.png 881w, https://fintechos.com/wp-content/uploads/2022/04/Howden-300x55.png 300w, https://fintechos.com/wp-content/uploads/2022/04/Howden-768x140.png 768w" data-lazy-sizes="(max-width: 881px) 100vw, 881px" data-lazy-src="https://fintechos.com/wp-content/uploads/2022/04/Howden.png" /><noscript><img width="881" height="161" src="https://fintechos.com/wp-content/uploads/2022/04/Howden.png" class="slider-content__logo" alt="" srcset="https://fintechos.com/wp-content/uploads/2022/04/Howden.png 881w, https://fintechos.com/wp-content/uploads/2022/04/Howden-300x55.png 300w, https://fintechos.com/wp-content/uploads/2022/04/Howden-768x140.png 768w" sizes="(max-width: 881px) 100vw, 881px" /></noscript>                                            <i class="fal fa-long-arrow-left slider__button--prev slider-content__prev slider-content__prev--desktop"></i>
+                                            <i class="fal fa-long-arrow-right slider__button--next slider-content__next slider-content__next--desktop"></i>
+                                        </div>
+
+                                        <div class="slider-content__line"></div>
+
+                                        <p><b>120%</b><span style="font-weight: 400;"> growth in profitability<br />
+</span><b>60%</b><span style="font-weight: 400;"> growth in customer base<br />
+</span><span style="font-weight: 400;">Onboarding now takes just </span><b>6 minutes</b></p>
+                                    </div>
+
+                                    <div class="col-md-8 col-12 slider-content__column">
+
+                                        <div class="slider-content__quote">
+                                            <p><span style="font-weight: 400;">“Using FintechOS has already helped us improve the efficiency of a number of business critical operations by more than 50%. The system not only allows us to offer a great customer experience, but we’re doing it faster, and we’re doing it without errors.”</span></p>
+                                        </div>
+
+                                        <div class="slider-content__wrapper">
+                                            <div class="slider-content__person">
+                                                <p><span style="font-weight: 400;"><strong>Raj Sakaria<br />
+</strong></span><span style="font-weight: 400;">Director of Enterprise Architecture,<br />
+Howden Group</span></p>
+                                            </div>
+                                                                                    </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                                                    <div class="swiper-slide slider-content__slide">
+                                <div class="row">
+                                    <div class="col-md-4 col-12">
+
+                                        <div class="slider-content__logo-wrapper">
+                                            <img width="1" height="1" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201%201'%3E%3C/svg%3E" class="slider-content__logo" alt="" data-lazy-src="https://fintechos.com/wp-content/uploads/2022/05/Vector-5.svg" /><noscript><img width="1" height="1" src="https://fintechos.com/wp-content/uploads/2022/05/Vector-5.svg" class="slider-content__logo" alt="" /></noscript>                                            <i class="fal fa-long-arrow-left slider__button--prev slider-content__prev slider-content__prev--desktop"></i>
+                                            <i class="fal fa-long-arrow-right slider__button--next slider-content__next slider-content__next--desktop"></i>
+                                        </div>
+
+                                        <div class="slider-content__line"></div>
+
+                                        <p><b>Adaptive scoring</b><span style="font-weight: 400;"> based on past purchase<br />
+</span><span style="font-weight: 400;">Marketplace of </span><b>20k </b><span style="font-weight: 400;">business partners<br />
+</span><b>8 million </b><span style="font-weight: 400;">orders annually</span></p>
+                                    </div>
+
+                                    <div class="col-md-8 col-12 slider-content__column">
+
+                                        <div class="slider-content__quote">
+                                            <p><span style="font-weight: 400;">“Time is a precious resource, and now, with a smartphone only, our customers can get approved for financing in up to ten minutes through a simple and intuitive flow, in which online funding is reduced to a single field that must be completed.”</span></p>
+                                        </div>
+
+                                        <div class="slider-content__wrapper">
+                                            <div class="slider-content__person">
+                                                <p><span style="font-weight: 400;"><strong>Mircea Balica<br />
+</strong>eMAG financial services manager</span></p>
+                                            </div>
+                                                                                    </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                                                    <div class="swiper-slide slider-content__slide">
+                                <div class="row">
+                                    <div class="col-md-4 col-12">
+
+                                        <div class="slider-content__logo-wrapper">
+                                            <img width="1" height="1" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201%201'%3E%3C/svg%3E" class="slider-content__logo" alt="" data-lazy-src="https://fintechos.com/wp-content/uploads/2021/04/TBI-Bank-1.svg" /><noscript><img width="1" height="1" src="https://fintechos.com/wp-content/uploads/2021/04/TBI-Bank-1.svg" class="slider-content__logo" alt="" /></noscript>                                            <i class="fal fa-long-arrow-left slider__button--prev slider-content__prev slider-content__prev--desktop"></i>
+                                            <i class="fal fa-long-arrow-right slider__button--next slider-content__next slider-content__next--desktop"></i>
+                                        </div>
+
+                                        <div class="slider-content__line"></div>
+
+                                        <p><b>1M</b><span style="font-weight: 400;"> online loan applications annually<br />
+</span><span style="font-weight: 400;">Embedded lending with </span><b>10k</b><span style="font-weight: 400;"> merchants<br />
+</span><span style="font-weight: 400;">Time-to-money reduced to </span><b>15 minutes</b></p>
+<p>&nbsp;</p>
+                                    </div>
+
+                                    <div class="col-md-8 col-12 slider-content__column">
+
+                                        <div class="slider-content__quote">
+                                            <p><span style="font-weight: 400;">“It is not easy to innovate in a traditional banking market, but our desire to offer our clients a different financing solution, 100 percent online, was sustained by the boldness of our partner FintechOS. And they delivered.”</span></p>
+                                        </div>
+
+                                        <div class="slider-content__wrapper">
+                                            <div class="slider-content__person">
+                                                <img width="51" height="51" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2051%2051'%3E%3C/svg%3E" class="attachment-thumbnail size-thumbnail" alt="" data-lazy-src="https://fintechos.com/wp-content/uploads/2022/06/Ellipse-41-1-1.png" /><noscript><img width="51" height="51" src="https://fintechos.com/wp-content/uploads/2022/06/Ellipse-41-1-1.png" class="attachment-thumbnail size-thumbnail" alt="" /></noscript><p><span style="font-weight: 400;"><strong>Kostas Tovil<br />
+</strong>Senior Vice President e-Commerce,<br />
+TBI Bank</span></p>
+                                            </div>
+                                                                                    </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                                            </div>
+
+                    <i class="fal fa-long-arrow-left slider__button--prev slider-content__prev slider-content__prev--mobile"></i>
+                    <i class="fal fa-long-arrow-right slider__button--next slider-content__next slider-content__next--mobile"></i>
+
+                </div>
+            </div>
+        
+    </div>
+</section>
+
+
+
+<section class="section demo-promo background-primary color-white" style="--arrow1: #001b43; --arrow2: #001b43; --arrow3: #ffffff;">
+  <svg viewBox="0 0 204 447" class="demo-promo__arrow1" xmlns="http://www.w3.org/2000/svg">
+<path d="M14.4594 447C5.05364 437.558 0.48515 424.879 0.216415 412.74C0.216415 400.331 5.05364 387.922 14.4594 378.48L138.884 253.579C155.276 237.123 155.276 210.416 138.884 193.691L14.4594 68.79C-4.35208 49.9065 -4.35208 18.8835 14.4594 -1.124e-08L180 166.175C211.711 198.007 211.711 249.263 180 281.095L14.4594 447Z" />
+</svg>
+  <svg  viewBox="0 0 74 162" class="demo-promo__arrow3" xmlns="http://www.w3.org/2000/svg">
+<path d="M68.8263 -1.66296e-05C72.2429 3.42183 73.9024 8.01688 74 12.4164C74 16.9137 72.2429 21.411 68.8263 24.8328L23.6293 70.099C17.6746 76.0628 17.6746 85.7417 23.6293 91.8033L68.8263 137.069C75.6595 143.913 75.6595 155.156 68.8263 162L8.69382 101.775C-2.82506 90.239 -2.82506 71.6632 8.69382 60.1267L68.8263 -1.66296e-05Z"/>
+</svg>
+  <div class="container">
+    <div class="demo-promo__inner">
+      <svg viewBox="0 0 204 447" class="demo-promo__arrow2" xmlns="http://www.w3.org/2000/svg">
+<path d="M14.4594 447C5.05364 437.558 0.48515 424.879 0.216415 412.74C0.216415 400.331 5.05364 387.922 14.4594 378.48L138.884 253.579C155.276 237.123 155.276 210.416 138.884 193.691L14.4594 68.79C-4.35208 49.9065 -4.35208 18.8835 14.4594 -1.124e-08L180 166.175C211.711 198.007 211.711 249.263 180 281.095L14.4594 447Z" />
+</svg>
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-8 col-lg-7">
+          <div class="text-center">
+            <img width="55" height="54" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2055%2054'%3E%3C/svg%3E" class="demo-promo__icon" alt="" data-lazy-src="https://fintechos.com/wp-content/uploads/2022/04/Group.png" /><noscript><img width="55" height="54" src="https://fintechos.com/wp-content/uploads/2022/04/Group.png" class="demo-promo__icon" alt="" /></noscript>
+            <h2 class="demo-promo__title">To find out more about what FintechOS can do, <strong>get in touch</strong>
+</h2>
+
+            
+              <a class="btn btn--pink" href="/demo/">
+                Book a demo              </a>
+
+                      </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="section post-selector">
+  <div class="container">
+
+    <div class="row">
+      <div class="col-12 ">
+        <h2 class="post-selector__title ">Read about the latest Fintech trends</h2>
+      </div>
+      
+              <div class="col-12 col-md-6 col-lg-4">
+          <div>
+  
+
+<div class="insight-image insight-card__top">
+  <a href="https://fintechos.com/article/five-key-digital-initiatives-in-sme-banking/">
+      <img width="2560" height="2304" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%202560%202304'%3E%3C/svg%3E" class="insight-image__image wp-post-image" alt="" data-lazy-srcset="https://fintechos.com/wp-content/uploads/2021/10/Five-key-digital-initiatives-in-SME-Banking-updated-scaled-1.jpg 2560w, https://fintechos.com/wp-content/uploads/2021/10/Five-key-digital-initiatives-in-SME-Banking-updated-scaled-1-300x270.jpg 300w, https://fintechos.com/wp-content/uploads/2021/10/Five-key-digital-initiatives-in-SME-Banking-updated-scaled-1-1024x922.jpg 1024w, https://fintechos.com/wp-content/uploads/2021/10/Five-key-digital-initiatives-in-SME-Banking-updated-scaled-1-768x691.jpg 768w, https://fintechos.com/wp-content/uploads/2021/10/Five-key-digital-initiatives-in-SME-Banking-updated-scaled-1-1536x1382.jpg 1536w, https://fintechos.com/wp-content/uploads/2021/10/Five-key-digital-initiatives-in-SME-Banking-updated-scaled-1-2048x1843.jpg 2048w" data-lazy-sizes="(max-width: 2560px) 100vw, 2560px" data-lazy-src="https://fintechos.com/wp-content/uploads/2021/10/Five-key-digital-initiatives-in-SME-Banking-updated-scaled-1.jpg" /><noscript><img width="2560" height="2304" src="https://fintechos.com/wp-content/uploads/2021/10/Five-key-digital-initiatives-in-SME-Banking-updated-scaled-1.jpg" class="insight-image__image wp-post-image" alt="" srcset="https://fintechos.com/wp-content/uploads/2021/10/Five-key-digital-initiatives-in-SME-Banking-updated-scaled-1.jpg 2560w, https://fintechos.com/wp-content/uploads/2021/10/Five-key-digital-initiatives-in-SME-Banking-updated-scaled-1-300x270.jpg 300w, https://fintechos.com/wp-content/uploads/2021/10/Five-key-digital-initiatives-in-SME-Banking-updated-scaled-1-1024x922.jpg 1024w, https://fintechos.com/wp-content/uploads/2021/10/Five-key-digital-initiatives-in-SME-Banking-updated-scaled-1-768x691.jpg 768w, https://fintechos.com/wp-content/uploads/2021/10/Five-key-digital-initiatives-in-SME-Banking-updated-scaled-1-1536x1382.jpg 1536w, https://fintechos.com/wp-content/uploads/2021/10/Five-key-digital-initiatives-in-SME-Banking-updated-scaled-1-2048x1843.jpg 2048w" sizes="(max-width: 2560px) 100vw, 2560px" /></noscript>
+      <div>
+        
+
+<div class="event-date">
+  </div>      </div>
+    </a>
+</div>
+  <a class="insight-card" href="https://fintechos.com/article/five-key-digital-initiatives-in-sme-banking/">
+    <div class="insight-card__info">
+      <span>Articles</span>
+
+          </div>
+
+    <div class="insight-card__content">
+      <h3 class="insight-card__title h4">
+        Five key digital initiatives in SME Banking      </h3>
+      <p>Today, SME banking embeds technology in almost every business model. Read about five key digital initiatives that we spotted while interviewing some SME bankers and experts in our community. </p>
+    </div>
+
+
+    
+    <div class="subject-list">
+      <div class="subject-list__subject">
+      Customer Experience    </div>
+      <div class="subject-list__subject">
+      Digital Transformation    </div>
+      <div class="subject-list__subject">
+      SME Banking    </div>
+      <div class="subject-list__subject">
+      Technology    </div>
+  </div>  </a>
+
+</div>        </div>
+              <div class="col-12 col-md-6 col-lg-4">
+          <div>
+  
+
+<div class="insight-image insight-card__top">
+  <a href="https://fintechos.com/article/digital-banking-with-a-human-touch-three-trends/">
+      <img width="2560" height="1707" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%202560%201707'%3E%3C/svg%3E" class="insight-image__image wp-post-image" alt="" loading="lazy" data-lazy-srcset="https://fintechos.com/wp-content/uploads/2021/09/foto-2.jpeg 2560w, https://fintechos.com/wp-content/uploads/2021/09/foto-2-300x200.jpeg 300w, https://fintechos.com/wp-content/uploads/2021/09/foto-2-1024x683.jpeg 1024w, https://fintechos.com/wp-content/uploads/2021/09/foto-2-768x512.jpeg 768w, https://fintechos.com/wp-content/uploads/2021/09/foto-2-1536x1024.jpeg 1536w, https://fintechos.com/wp-content/uploads/2021/09/foto-2-2048x1366.jpeg 2048w" data-lazy-sizes="(max-width: 2560px) 100vw, 2560px" data-lazy-src="https://fintechos.com/wp-content/uploads/2021/09/foto-2.jpeg" /><noscript><img width="2560" height="1707" src="https://fintechos.com/wp-content/uploads/2021/09/foto-2.jpeg" class="insight-image__image wp-post-image" alt="" loading="lazy" srcset="https://fintechos.com/wp-content/uploads/2021/09/foto-2.jpeg 2560w, https://fintechos.com/wp-content/uploads/2021/09/foto-2-300x200.jpeg 300w, https://fintechos.com/wp-content/uploads/2021/09/foto-2-1024x683.jpeg 1024w, https://fintechos.com/wp-content/uploads/2021/09/foto-2-768x512.jpeg 768w, https://fintechos.com/wp-content/uploads/2021/09/foto-2-1536x1024.jpeg 1536w, https://fintechos.com/wp-content/uploads/2021/09/foto-2-2048x1366.jpeg 2048w" sizes="(max-width: 2560px) 100vw, 2560px" /></noscript>
+      <div>
+        
+
+<div class="event-date">
+  </div>      </div>
+    </a>
+</div>
+  <a class="insight-card" href="https://fintechos.com/article/digital-banking-with-a-human-touch-three-trends/">
+    <div class="insight-card__info">
+      <span>Articles</span>
+
+          </div>
+
+    <div class="insight-card__content">
+      <h3 class="insight-card__title h4">
+        Digital Banking with a Human Touch: Three Trends      </h3>
+      <p>Digital banking is fast and frictionless – but are these capabilities enough for a bank to build trust and attract new customers in strategic business areas? </p>
+    </div>
+
+
+    
+    <div class="subject-list">
+      <div class="subject-list__subject">
+      Customer centricity    </div>
+      <div class="subject-list__subject">
+      Customer Experience    </div>
+      <div class="subject-list__subject">
+      Digital Transformation    </div>
+      <div class="subject-list__subject">
+      Innovation    </div>
+      <div class="subject-list__subject">
+      Technology    </div>
+  </div>  </a>
+
+</div>        </div>
+              <div class="col-12 col-md-6 col-lg-4">
+          <div>
+  
+
+<div class="insight-image insight-card__top">
+  <a href="https://fintechos.com/article/digital-insurance-how-incumbents-should-think-and-act-like-challengers/">
+      <img width="2060" height="1374" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%202060%201374'%3E%3C/svg%3E" class="insight-image__image wp-post-image" alt="" loading="lazy" data-lazy-srcset="https://fintechos.com/wp-content/uploads/2021/09/foto-3.jpeg 2060w, https://fintechos.com/wp-content/uploads/2021/09/foto-3-300x200.jpeg 300w, https://fintechos.com/wp-content/uploads/2021/09/foto-3-1024x683.jpeg 1024w, https://fintechos.com/wp-content/uploads/2021/09/foto-3-768x512.jpeg 768w, https://fintechos.com/wp-content/uploads/2021/09/foto-3-1536x1024.jpeg 1536w, https://fintechos.com/wp-content/uploads/2021/09/foto-3-2048x1366.jpeg 2048w" data-lazy-sizes="(max-width: 2060px) 100vw, 2060px" data-lazy-src="https://fintechos.com/wp-content/uploads/2021/09/foto-3.jpeg" /><noscript><img width="2060" height="1374" src="https://fintechos.com/wp-content/uploads/2021/09/foto-3.jpeg" class="insight-image__image wp-post-image" alt="" loading="lazy" srcset="https://fintechos.com/wp-content/uploads/2021/09/foto-3.jpeg 2060w, https://fintechos.com/wp-content/uploads/2021/09/foto-3-300x200.jpeg 300w, https://fintechos.com/wp-content/uploads/2021/09/foto-3-1024x683.jpeg 1024w, https://fintechos.com/wp-content/uploads/2021/09/foto-3-768x512.jpeg 768w, https://fintechos.com/wp-content/uploads/2021/09/foto-3-1536x1024.jpeg 1536w, https://fintechos.com/wp-content/uploads/2021/09/foto-3-2048x1366.jpeg 2048w" sizes="(max-width: 2060px) 100vw, 2060px" /></noscript>
+      <div>
+        
+
+<div class="event-date">
+  </div>      </div>
+    </a>
+</div>
+  <a class="insight-card" href="https://fintechos.com/article/digital-insurance-how-incumbents-should-think-and-act-like-challengers/">
+    <div class="insight-card__info">
+      <span>Articles</span>
+
+          </div>
+
+    <div class="insight-card__content">
+      <h3 class="insight-card__title h4">
+        Digital Insurance: How Incumbents Should Think and Act Like Challengers      </h3>
+      <p>In an increasingly digital economy, insurtechs are leading the way. How should traditional insurers think and act like challengers to preserve their leadership position? </p>
+    </div>
+
+
+    
+    <div class="subject-list">
+      <div class="subject-list__subject">
+      Insurance    </div>
+      <div class="subject-list__subject">
+      Technology    </div>
+  </div>  </a>
+
+</div>        </div>
+      
+    </div>
+  </div>
+</section>
+
+
+<section class="background-zircon">
+  <div class="container">
+    <div class="newsletter-subscribe mt-0">
+
+      <h2 class="newsletter-subscribe__title">
+        Get fintech insights ahead of the market      </h2>
+      <img width="315" height="188" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20315%20188'%3E%3C/svg%3E" class="newsletter-subscribe__icon" alt="" data-lazy-srcset="https://fintechos.com/wp-content/uploads/2022/01/letter-big-1.png 315w, https://fintechos.com/wp-content/uploads/2022/01/letter-big-1-300x179.png 300w" data-lazy-sizes="(max-width: 315px) 100vw, 315px" data-lazy-src="https://fintechos.com/wp-content/uploads/2022/01/letter-big-1.png" /><noscript><img width="315" height="188" src="https://fintechos.com/wp-content/uploads/2022/01/letter-big-1.png" class="newsletter-subscribe__icon" alt="" srcset="https://fintechos.com/wp-content/uploads/2022/01/letter-big-1.png 315w, https://fintechos.com/wp-content/uploads/2022/01/letter-big-1-300x179.png 300w" sizes="(max-width: 315px) 100vw, 315px" /></noscript>      <p class="newsletter-subscribe__text">
+        Never want to miss another FintechOS story ever again? Then we have some good news for you: subscribe and enlighten yourself.      </p>
+
+              <div class="newsletter-subscribe__hubspot">
+          <button class="btn btn--pink" popup-trigger="insight">
+            Subscribe          </button>
+        </div>
+      
+    </div>
+  </div>
+
+  
+
+<div id="insight" class="content-overlay">
+    <div class="container h-100">
+        <div class="row align-items-center justify-content-center h-100">
+            <div class="col-12 col-md-8 col-lg-6">
+                <div class="popup">
+                    <div class="popup__header">
+                        <div class="popup__close close-popup"></div>
+                    </div>
+                    <div class="popup__body">
+                        <div class="popup__content">
+                            
+					<script type="rocketlazyloadscript">
+						window.hsFormsOnReady = window.hsFormsOnReady || [];
+						window.hsFormsOnReady.push(()=>{
+							hbspt.forms.create({
+								portalId: 6761892,
+								formId: "b0443912-7254-4a10-a802-fd5772ba0228",
+								target: "#hbspt-form-1655657159000-0659183090",
+								region: "na1",
+								
+						})});
+					</script>
+					<div class="hbspt-form" id="hbspt-form-1655657159000-0659183090"></div>                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div></section></main>
+<button id="back-to-top" class="back-to-top">
+  <i class="back-to-top__icon far fa-chevron-up"></i>
+</button>
+
+
+<footer class="footer" role="contentinfo" >
+	<div class="container">
+					<div class="footer__top">
+
+									<div class="socials socials--middle socials--secondary socials--space">
+
+						<div class="socials__share">
+							Find us on social media						</div>
+
+														<a class="socials__social" href="https://twitter.com/fintech_os" target="_blank">
+									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <g>
+        <path fill="none" d="M0 0h24v24H0z"/>
+        <path d="M22.162 5.656a8.384 8.384 0 0 1-2.402.658A4.196 4.196 0 0 0 21.6 4c-.82.488-1.719.83-2.656 1.015a4.182 4.182 0 0 0-7.126 3.814 11.874 11.874 0 0 1-8.62-4.37 4.168 4.168 0 0 0-.566 2.103c0 1.45.738 2.731 1.86 3.481a4.168 4.168 0 0 1-1.894-.523v.052a4.185 4.185 0 0 0 3.355 4.101 4.21 4.21 0 0 1-1.89.072A4.185 4.185 0 0 0 7.97 16.65a8.394 8.394 0 0 1-6.191 1.732 11.83 11.83 0 0 0 6.41 1.88c7.693 0 11.9-6.373 11.9-11.9 0-.18-.005-.362-.013-.54a8.496 8.496 0 0 0 2.087-2.165z"/>
+    </g>
+</svg>
+								</a>
+														<a class="socials__social" href="https://www.facebook.com/fintechos" target="_blank">
+									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <g>
+        <path fill="none" d="M0 0h24v24H0z"/>
+        <path d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-.326-.043-1.557-.14-2.857-.14C11.928 2 10 3.657 10 6.7v2.8H7v4h3V22h4v-8.5z"/>
+    </g>
+</svg>
+								</a>
+														<a class="socials__social" href="https://www.instagram.com/inside.fintechos/" target="_blank">
+									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <g>
+        <path fill="none" d="M0 0h24v24H0z"/>
+        <path fill-rule="nonzero" d="M12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm0-2a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm6.5-.25a1.25 1.25 0 0 1-2.5 0 1.25 1.25 0 0 1 2.5 0zM12 4c-2.474 0-2.878.007-4.029.058-.784.037-1.31.142-1.798.332-.434.168-.747.369-1.08.703a2.89 2.89 0 0 0-.704 1.08c-.19.49-.295 1.015-.331 1.798C4.006 9.075 4 9.461 4 12c0 2.474.007 2.878.058 4.029.037.783.142 1.31.331 1.797.17.435.37.748.702 1.08.337.336.65.537 1.08.703.494.191 1.02.297 1.8.333C9.075 19.994 9.461 20 12 20c2.474 0 2.878-.007 4.029-.058.782-.037 1.309-.142 1.797-.331.433-.169.748-.37 1.08-.702.337-.337.538-.65.704-1.08.19-.493.296-1.02.332-1.8.052-1.104.058-1.49.058-4.029 0-2.474-.007-2.878-.058-4.029-.037-.782-.142-1.31-.332-1.798a2.911 2.911 0 0 0-.703-1.08 2.884 2.884 0 0 0-1.08-.704c-.49-.19-1.016-.295-1.798-.331C14.925 4.006 14.539 4 12 4zm0-2c2.717 0 3.056.01 4.122.06 1.065.05 1.79.217 2.428.465.66.254 1.216.598 1.772 1.153a4.908 4.908 0 0 1 1.153 1.772c.247.637.415 1.363.465 2.428.047 1.066.06 1.405.06 4.122 0 2.717-.01 3.056-.06 4.122-.05 1.065-.218 1.79-.465 2.428a4.883 4.883 0 0 1-1.153 1.772 4.915 4.915 0 0 1-1.772 1.153c-.637.247-1.363.415-2.428.465-1.066.047-1.405.06-4.122.06-2.717 0-3.056-.01-4.122-.06-1.065-.05-1.79-.218-2.428-.465a4.89 4.89 0 0 1-1.772-1.153 4.904 4.904 0 0 1-1.153-1.772c-.248-.637-.415-1.363-.465-2.428C2.013 15.056 2 14.717 2 12c0-2.717.01-3.056.06-4.122.05-1.066.217-1.79.465-2.428a4.88 4.88 0 0 1 1.153-1.772A4.897 4.897 0 0 1 5.45 2.525c.638-.248 1.362-.415 2.428-.465C8.944 2.013 9.283 2 12 2z"/>
+    </g>
+</svg>
+								</a>
+														<a class="socials__social" href="https://www.youtube.com/channel/UCivgW1aNJ28Wuo4NkLz43qA" target="_blank">
+									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <g>
+        <path fill="none" d="M0 0h24v24H0z"/>
+        <path d="M21.543 6.498C22 8.28 22 12 22 12s0 3.72-.457 5.502c-.254.985-.997 1.76-1.938 2.022C17.896 20 12 20 12 20s-5.893 0-7.605-.476c-.945-.266-1.687-1.04-1.938-2.022C2 15.72 2 12 2 12s0-3.72.457-5.502c.254-.985.997-1.76 1.938-2.022C6.107 4 12 4 12 4s5.896 0 7.605.476c.945.266 1.687 1.04 1.938 2.022zM10 15.5l6-3.5-6-3.5v7z"/>
+    </g>
+</svg>
+								</a>
+														<a class="socials__social" href="https://www.linkedin.com/company/fintechos" target="_blank">
+									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <g>
+        <path fill="none" d="M0 0h24v24H0z"/>
+        <path fill-rule="nonzero" d="M6.94 5a2 2 0 1 1-4-.002 2 2 0 0 1 4 .002zM7 8.48H3V21h4V8.48zm6.32 0H9.34V21h3.94v-6.57c0-3.66 4.77-4 4.77 0V21H22v-7.93c0-6.17-7.06-5.94-8.72-2.91l.04-1.68z"/>
+    </g>
+</svg>
+								</a>
+						
+					</div>
+				
+				<div class="footer__menu">
+					<ul class="menu menu--horizontal menu--simple"><li id="menu__item--17902" class="menu__item menu__item--type-post_type menu__item--object-page menu__item--17902"><a href="https://fintechos.com/terms-conditions/"class="menu__link">Terms &#038; Conditions</a></li>
+<li id="menu__item--17904" class="menu__item menu__item--type-post_type menu__item--object-page menu__item--privacy-policy menu__item--17904"><a href="https://fintechos.com/privacy-policy/"class="menu__link">Privacy Policy</a></li>
+<li id="menu__item--17903" class="menu__item menu__item--type-post_type menu__item--object-page menu__item--17903"><a href="https://fintechos.com/cookie-policy/"class="menu__link">Cookie Policy</a></li>
+</ul>				</div>
+
+				<div>
+					2022 FintechOS - All Rights Reserved				</div>
+			</div>
+			<div class="footer__content">
+				<div class="row">
+					<div class="col-12 col-md-4">
+						<div class="footer__logo">
+							<svg width="164" height="29" viewBox="0 0 164 29" fill="none" xmlns="http://www.w3.org/2000/svg" class="logo">
+    <path class="logo__name" d="M47.8461 10.2142V24.8072H45.9211V12.1082H39.9597V24.8382H38.0347V12.1082H35.5508V10.2452H38.0347V9.65532C38.0347 5.92946 40.0839 4.06653 44.1513 4.06653C44.9586 4.06653 45.89 4.19072 46.9457 4.40807V6.1468C46.0453 5.99156 45.1138 5.89841 44.1513 5.89841C41.2327 5.89841 39.9597 6.92302 39.9597 9.62427V10.2142H47.8461Z" />
+    <path class="logo__name" d="M64.4573 15.866V24.808H62.5323V15.866C62.5323 13.2579 61.104 11.7675 58.558 11.7675C55.7636 11.7675 53.8386 13.4752 53.8386 17.2011V24.8391H51.9136V10.2461H53.8386V12.5127C54.9253 10.774 56.5399 9.87354 58.7443 9.87354C62.2839 9.87354 64.4573 12.2022 64.4573 15.866Z" />
+    <path class="logo__name" d="M75.9453 12.109H71.7227V20.9579C71.7227 23.4728 73.1199 23.2555 75.9143 23.1313V24.8079C71.8158 25.4289 69.7977 24.3112 69.7977 20.9268V12.109H66.7549V10.246H69.8287V6.73751L71.7537 6.14758V10.246H75.9453V12.109Z" />
+    <path class="logo__name" d="M90.2278 12.1711C91.5629 13.6925 92.2459 15.4933 92.2459 17.5736C92.2459 17.7909 92.2149 18.1014 92.1838 18.474H79.3917C79.7643 21.4236 82.0619 23.2866 85.1978 23.2866C87.4023 23.2866 89.0789 22.293 89.8862 20.8026L91.5629 21.7962C90.2899 23.8765 87.9612 25.1495 85.1358 25.1495C82.8381 25.1495 80.9752 24.4354 79.547 22.9761C78.1187 21.5478 77.3735 19.7159 77.3735 17.4804C77.3735 15.307 78.0877 13.4751 79.5159 12.0158C80.9442 10.5565 82.745 9.84241 85.0115 9.84241C87.1539 9.87346 88.9237 10.6497 90.2278 12.1711ZM79.3607 16.6111H90.2278C90.0104 15.0586 89.4515 13.8788 88.458 13.0094C87.4644 12.14 86.2846 11.7364 84.9805 11.7364C81.9688 11.7364 79.7643 13.7235 79.3607 16.6111Z" />
+    <path class="logo__name" d="M96.6236 22.9761C95.1643 21.4858 94.4502 19.685 94.4502 17.5116C94.4502 15.3381 95.1643 13.5373 96.6236 12.078C98.0829 10.5877 99.9148 9.87354 102.119 9.87354C105.007 9.87354 107.46 11.3639 108.515 13.6925L106.932 14.593C106.156 12.8542 104.293 11.7365 102.119 11.7365C100.505 11.7365 99.1386 12.2953 98.0208 13.4131C96.9031 14.5309 96.3442 15.897 96.3442 17.5116C96.3442 19.1261 96.9031 20.4922 98.0208 21.61C99.1386 22.7278 100.505 23.2866 102.119 23.2866C104.293 23.2866 106.094 22.1689 107.056 20.4301L108.671 21.3616C107.46 23.6903 104.976 25.1496 102.15 25.1496C99.9148 25.1496 98.0829 24.4354 96.6236 22.9761Z" />
+    <path class="logo__name" d="M123.947 15.866V24.808H122.022V15.866C122.022 13.2579 120.594 11.7675 118.048 11.7675C115.253 11.7675 113.328 13.4752 113.328 17.2011V24.8391H111.403V4.40894H113.328V12.5127C114.415 10.7739 116.03 9.87353 118.234 9.87353C121.743 9.87353 123.947 12.2022 123.947 15.866Z" />
+    <path class="logo__name" d="M137.36 25.1495C134.41 25.1495 131.895 24.1249 129.877 22.0757C127.828 19.9954 126.803 17.5115 126.803 14.5929C126.803 11.6433 127.828 9.15936 129.877 7.11013C131.926 5.02986 134.441 4.00525 137.36 4.00525C140.309 4.00525 142.824 5.02986 144.843 7.11013C146.892 9.15936 147.916 11.6433 147.916 14.5929C147.916 17.5425 146.892 20.0265 144.843 22.0757C142.824 24.1559 140.309 25.1495 137.36 25.1495ZM137.36 23.1934C139.782 23.1934 141.8 22.3862 143.414 20.7095C145.06 19.0329 145.867 17.0147 145.867 14.624C145.867 12.2332 145.06 10.215 143.414 8.56943C141.769 6.89279 139.782 6.05447 137.36 6.05447C134.938 6.05447 132.92 6.89279 131.305 8.56943C129.66 10.2461 128.852 12.2332 128.852 14.624C128.852 17.0147 129.66 19.0639 131.305 20.7095C132.92 22.3551 134.938 23.1934 137.36 23.1934Z" />
+    <path class="logo__name" d="M149.531 20.1817L151.27 19.1571C151.984 21.7031 154.002 23.1935 157.138 23.1935C160.181 23.1935 161.951 21.7342 161.951 19.5297C161.951 18.443 161.578 17.6668 160.771 17.1079C159.995 16.549 158.691 15.9901 156.921 15.4313C154.779 14.7171 153.381 14.1893 152.729 13.7546C151.177 12.8232 150.401 11.4881 150.401 9.68722C150.401 7.97954 151.022 6.58234 152.201 5.58878C153.412 4.56416 154.872 4.06738 156.672 4.06738C159.839 4.06738 162.261 5.89926 163.41 8.47632L161.702 9.43883C160.771 7.20332 159.094 6.05451 156.672 6.05451C154.126 6.05451 152.45 7.35856 152.45 9.59408C152.45 10.6187 152.791 11.3639 153.505 11.8606C154.22 12.3574 155.368 12.8853 156.983 13.4131L158.566 13.972C158.877 14.0651 159.343 14.2204 159.964 14.4998C160.585 14.7482 161.05 14.9345 161.33 15.1518C161.92 15.4934 162.944 16.2075 163.286 16.8595C163.658 17.4805 164 18.443 164 19.4987C164 21.2063 163.348 22.6346 162.106 23.6592C160.864 24.6838 159.187 25.2116 157.107 25.2116C153.381 25.1495 150.587 23.2866 149.531 20.1817Z" />
+
+    <path class="logo__shape" d="M25.8326 0C25.8326 1.08671 25.3669 2.08027 24.6838 2.82544C23.9697 3.53957 22.9761 3.97425 21.8584 3.97425H7.42067C5.52669 3.97425 3.97425 5.52669 3.97425 7.42067V21.8584C3.97425 24.0629 2.20447 25.8326 0 25.8326V6.64445C0 2.98069 2.98069 0 6.64445 0H25.8326Z" />
+    <path class="logo__shape" d="M3.13574 28.9375C3.13574 27.8508 3.60147 26.8572 4.28455 26.1121C4.99867 25.3979 5.99224 24.9632 7.10999 24.9632H21.5477C23.4417 24.9632 24.9941 23.4108 24.9941 21.5168V7.07911C24.9941 4.87464 26.7639 3.10486 28.9684 3.10486V22.293C28.9684 25.9568 25.9877 28.9375 22.3239 28.9375H3.13574Z" />
+</svg>						</div>
+
+													<div class="col-12 col-md-6 footer__about">
+								<ul class="menu menu--vertical menu--footer"><li id="menu__item--17905" class="menu__item menu__item--type-post_type menu__item--object-page menu__item--17905"><a href="https://fintechos.com/about-us/"class="menu__link">About us</a></li>
+<li id="menu__item--19049" class="menu__item menu__item--type-post_type menu__item--object-page menu__item--19049"><a href="https://fintechos.com/why-fintechos/"class="menu__link">Why FintechOS?</a></li>
+<li id="menu__item--19050" class="menu__item menu__item--type-post_type menu__item--object-page menu__item--19050"><a href="https://fintechos.com/contact-us/"class="menu__link">Contact us</a></li>
+<li id="menu__item--17906" class="menu__item--faded menu__item menu__item--type-custom menu__item--object-custom menu__item--17906"><a target="_blank"href="http://inside.fintechos.com"class="menu__link">Inside FintechOS</a></li>
+</ul>							</div>
+											</div>
+
+											<div class="col-6 col-md-2">
+							<div class="footer__title">
+								Platform							</div>
+							<ul class="menu menu--vertical menu--footer"><li id="menu__item--19502" class="menu__item menu__item--type-post_type menu__item--object-page menu__item--19502"><a href="https://fintechos.com/lighthouse/"class="menu__link">Lighthouse</a></li>
+<li id="menu__item--19501" class="menu__item menu__item--type-post_type menu__item--object-page menu__item--19501"><a href="https://fintechos.com/northstar/"class="menu__link">Northstar</a></li>
+<li id="menu__item--19053" class="menu__item menu__item--type-post_type menu__item--object-page menu__item--19053"><a href="https://fintechos.com/innovation-studio/"class="menu__link">Innovation studio</a></li>
+<li id="menu__item--19052" class="menu__item menu__item--type-post_type menu__item--object-page menu__item--19052"><a href="https://fintechos.com/lean-core/"class="menu__link">Lean Core</a></li>
+<li id="menu__item--17908" class="menu__item menu__item--type-post_type menu__item--object-page menu__item--17908"><a href="https://fintechos.com/ecosystem-hub/"class="menu__link">Ecosystem hub</a></li>
+<li id="menu__item--19051" class="menu__item menu__item--type-post_type menu__item--object-page menu__item--19051"><a href="https://fintechos.com/deployment-and-security/"class="menu__link">Deployment and Security</a></li>
+</ul>						</div>
+					
+											<div class="col-6 col-md-2">
+							<div class="footer__title">
+								Industries							</div>
+							<ul class="menu menu--vertical menu--footer"><li id="menu__item--19042" class="menu__item menu__item--type-post_type menu__item--object-industry menu__item--19042"><a href="https://fintechos.com/industry/retail-banking/"class="menu__link">Retail Banking</a></li>
+<li id="menu__item--19043" class="menu__item menu__item--type-post_type menu__item--object-industry menu__item--19043"><a href="https://fintechos.com/industry/sme-banking/"class="menu__link">SME Banking</a></li>
+<li id="menu__item--19045" class="menu__item menu__item--type-post_type menu__item--object-industry menu__item--19045"><a href="https://fintechos.com/industry/general-insurance/"class="menu__link">General Insurance</a></li>
+<li id="menu__item--19047" class="menu__item menu__item--type-post_type menu__item--object-industry menu__item--19047"><a href="https://fintechos.com/industry/health-insurance/"class="menu__link">Health Insurance</a></li>
+<li id="menu__item--19046" class="menu__item menu__item--type-post_type menu__item--object-industry menu__item--19046"><a href="https://fintechos.com/industry/life-insurance/"class="menu__link">Life Insurance</a></li>
+<li id="menu__item--20198" class="menu__item--faded menu__item menu__item--type-custom menu__item--object-custom menu__item--20198"><a href="https://fintechos.com/demo/"class="menu__link">Book a demo</a></li>
+</ul>						</div>
+					
+					<div class="col-12 d-md-none">
+						<hr class="footer__hr">
+					</div>
+
+											<div class="col-6 col-md-2">
+							<div class="footer__title">
+								Ecosystem							</div>
+							<ul class="menu menu--vertical menu--footer"><li id="menu__item--19038" class="menu__item menu__item--type-post_type menu__item--object-page menu__item--19038"><a href="https://fintechos.com/partners/"class="menu__link">Partners</a></li>
+<li id="menu__item--19039" class="menu__item menu__item--type-post_type menu__item--object-page menu__item--19039"><a href="https://fintechos.com/customers/"class="menu__link">Customers</a></li>
+<li id="menu__item--19040" class="menu__item menu__item--type-post_type menu__item--object-page menu__item--19040"><a href="https://fintechos.com/services-and-support/"class="menu__link">Services and Support</a></li>
+<li id="menu__item--19041" class="menu__item menu__item--type-post_type menu__item--object-page menu__item--19041"><a href="https://fintechos.com/academy/"class="menu__link">Academy</a></li>
+</ul>						</div>
+					
+											<div class="col-6 col-md-2">
+							<div class="footer__title">
+								Insights							</div>
+							<ul class="menu menu--vertical menu--footer"><li id="menu__item--17911" class="menu__item menu__item--type-post_type menu__item--object-page menu__item--17911"><a href="https://fintechos.com/insights/"class="menu__link">Insights</a></li>
+<li id="menu__item--17913" class="menu__item menu__item--type-post_type menu__item--object-page menu__item--17913"><a href="https://fintechos.com/webinars/"class="menu__link">Webinars</a></li>
+<li id="menu__item--17909" class="menu__item menu__item--type-post_type menu__item--object-page menu__item--17909"><a href="https://fintechos.com/blog/"class="menu__link">Blog</a></li>
+<li id="menu__item--17914" class="menu__item menu__item--type-post_type menu__item--object-page menu__item--17914"><a href="https://fintechos.com/whitepapers/"class="menu__link">Whitepapers</a></li>
+<li id="menu__item--17910" class="menu__item menu__item--type-post_type menu__item--object-page menu__item--17910"><a href="https://fintechos.com/case-studies/"class="menu__link">Case studies</a></li>
+<li id="menu__item--17912" class="menu__item menu__item--type-post_type menu__item--object-page menu__item--17912"><a href="https://fintechos.com/newsroom/"class="menu__link">Newsroom</a></li>
+</ul>						</div>
+					
+					<div class="col-12 d-md-none">
+						<hr class="footer__hr">
+					</div>
+
+					
+									</div>
+			</div>
+			</div>
+</footer><script type='text/javascript' id='leadin-script-loader-js-js-extra'>
+/* <![CDATA[ */
+var leadin_wordpress = {"userRole":"visitor","pageType":"home","leadinPluginVersion":"8.13.58"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://fintechos.com/wp-content/cache/min/1/6761892.js?ver=1654860106' async defer id='hs-script-loader'></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' id='rocket-browser-checker-js-after'>
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+</script>
+<script type='text/javascript' id='rocket-preload-links-js-extra'>
+/* <![CDATA[ */
+var RocketPreloadLinksConfig = {"excludeUris":"\/(?:.+\/)?feed(?:\/(?:.+\/?)?)?$|\/(?:.+\/)?embed\/|\/(index\\.php\/)?wp\\-json(\/.*|$)|\/wp-admin\/|\/logout\/|\/wp-login.php|\/refer\/|\/go\/|\/recommend\/|\/recommends\/","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php|html|htm","siteUrl":"https:\/\/fintechos.com","onHoverDelay":"100","rateThrottle":"3"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' id='rocket-preload-links-js-after'>
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://fintechos.com/wp-content/cache/min/1/wp-content/themes/socialbrothers/dist/app.js?ver=1654860106' id='app-js'></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' defer src='https://js.hsforms.net/forms/embed/v2.js?ver=8.13.58' id='leadin-forms-v2-js'></script>
+<script>window.lazyLoadOptions={elements_selector:"img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}};window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async src="https://fintechos.com/wp-content/plugins/wp-rocket/assets/js/lazyload/17.5/lazyload.min.js"></script><script>function lazyLoadThumb(e){var t='<img data-lazy-src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"><noscript><img src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"></noscript>',a='<button class="play" aria-label="play Youtube video"></button>';return t.replace("ID",e)+a}function lazyLoadYoutubeIframe(){var e=document.createElement("iframe"),t="ID?autoplay=1";t+=0===this.parentNode.dataset.query.length?'':'&'+this.parentNode.dataset.query;e.setAttribute("src",t.replace("ID",this.parentNode.dataset.src)),e.setAttribute("frameborder","0"),e.setAttribute("allowfullscreen","1"),e.setAttribute("allow", "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"),this.parentNode.parentNode.replaceChild(e,this.parentNode)}document.addEventListener("DOMContentLoaded",function(){var e,t,p,a=document.getElementsByClassName("rll-youtube-player");for(t=0;t<a.length;t++)e=document.createElement("div"),e.setAttribute("data-id",a[t].dataset.id),e.setAttribute("data-query", a[t].dataset.query),e.setAttribute("data-src", a[t].dataset.src),e.innerHTML=lazyLoadThumb(a[t].dataset.id),a[t].appendChild(e),p=e.querySelector('.play'),p.onclick=lazyLoadYoutubeIframe});</script><script>"use strict";function wprRemoveCPCSS(){var preload_stylesheets=document.querySelectorAll('link[data-rocket-async="style"][rel="preload"]');if(preload_stylesheets&&0<preload_stylesheets.length)for(var stylesheet_index=0;stylesheet_index<preload_stylesheets.length;stylesheet_index++){var media=preload_stylesheets[stylesheet_index].getAttribute("media")||"all";if(window.matchMedia(media).matches)return void setTimeout(wprRemoveCPCSS,200)}var elem=document.getElementById("rocket-critical-css");elem&&"remove"in elem&&elem.remove()}window.addEventListener?window.addEventListener("load",wprRemoveCPCSS):window.attachEvent&&window.attachEvent("onload",wprRemoveCPCSS);</script><noscript><link rel="stylesheet" href="https://fintechos.com/wp-content/cache/min/1/de2d9cfa8e1f2adb42dceb65004597b7.css" media="all" data-minify="1" /></noscript></body></html>
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me -->
